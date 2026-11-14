@@ -86,7 +86,7 @@ Unverändert gegenüber Plan Kap. 5 (Matrix gilt). Neu, verbindlich für `SKILL.
 - **Fehlende Profile:** mit gekennzeichneten Annahmen arbeiten oder gezielt fragen (Plan 5.3).
 - **Befehle, die Code ändern** (`implement`, `improve`): nur nach den Regeln aus Plan 9.4.
 
-Claude Code übergibt Argumente an den Skill (geprüft an der Claude-Code-Doku). `SKILL.md` verwendet bewusst **keine Platzhalter** und leitet den Befehl aus dem Anfragetext ab (D-017), damit dieselbe Datei auch in Cursor funktioniert. Ob Cursor den Text hinter dem Skill-Namen weiterreicht, ist ungeprüft (`research/cursor-compatibility.md`). Fällt der Test negativ aus, bleibt die natürlichsprachliche Anfrage als Weg.
+Claude Code übergibt Argumente an den Skill (geprüft an der Claude-Code-Doku). `SKILL.md` verwendet bewusst **keine Platzhalter** und leitet den Befehl aus dem Anfragetext ab (D-017), damit dieselbe Datei auch in Cursor funktioniert. Cursor dokumentiert keinen Argumentmechanismus; ob der Text hinter dem Skill-Namen mitgeschickt wird, ist ungeprüft (`research/cursor-compatibility.md`). Fällt der Test negativ aus, bleibt die natürlichsprachliche Anfrage als Weg.
 
 ## 5. Qualitätssicherung als Teil der Architektur
 

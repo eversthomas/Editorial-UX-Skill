@@ -20,7 +20,7 @@ Prinzip: **vertikaler Schnitt zuerst.** Erst wenn eine kleine Fähigkeit messbar
 ### Vor Abschluss von Phase 1 zu klären
 
 1. **Entscheidungen freigeben:** D-002, D-003, D-004, D-005, D-007, D-008, D-009, D-015.
-2. **Claude-Code-Dokumentation lesen:** erledigt für Skills (`research/cursor-compatibility.md`); Plugin-Seiten offen. **Cursor-Doku lesen:** offen (Netzwerkfreigabe von `cursor.com` genutzt, Abruf vom Klassifikator abgelehnt; braucht Entscheidung des Projektverantwortlichen).
+2. **Claude-Code-Dokumentation lesen:** erledigt für Skills (`research/cursor-compatibility.md`); Plugin-Seiten offen. **Cursor-Doku (Skills, Plugins) und Claude-Code-Plugin-Seiten:** erledigt, siehe `research/cursor-compatibility.md`.
 3. **Repository umbenennen** (D-002): Aktion des Inhabers.
 4. **Primärquellen-Recherche** für die Methodik: NN/g-Heuristiken, WCAG 2.2, Cognitive Walkthrough, Cognitive-Load-Literatur; Nachweis je Aussage.
 
