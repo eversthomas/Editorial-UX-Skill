@@ -746,7 +746,7 @@ Die Phasen sind so geschnitten, dass früh ein **vertikaler Schnitt** entsteht: 
 
 Ziel: Eine belastbare fachliche Grundlage schaffen.
 
-**Stand:** Aufgaben 1, 2, 3 (Architektur) und 8 sind erledigt, Aufgabe 9 ist nur im Entwurf (offene Skalenbreite D-011). Aufgaben 4 bis 7 und `docs/methodology.md` sind offen und hängen am Zugriff auf Primärquellen (Nielsen Norman Group, W3C/WCAG).
+**Stand:** Aufgaben 1, 2, 3, 5 (Nielsen, Cognitive Load, WCAG aus Primärquellen: `research/methodology-sources.md`), 8 und 9 (Entwurf in `methodology.md`, Skalenbreite D-011 offen) sind erledigt. Aufgabe 4 (Prinzipien) ist in `methodology.md` teilweise enthalten, Aufgabe 6 (Abgrenzung) in `research/impeccable-analysis.md`. **Offen:** Aufgabe 7 (CMS- und Admin-UX-Patterns, Plattformwissen); sie braucht Quellen je Plattform.
 
 Aufgaben:
 

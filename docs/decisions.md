@@ -28,6 +28,9 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 | D-016 | Cursor als gleichrangige Zielumgebung; eine gemeinsame Installation | Vorschlag |
 | D-017 | Keine Argument-Platzhalter; Befehl aus dem Anfragetext ableiten | Vorschlag |
 | D-018 | Verteilung: Ordnerinstallation ab Alpha, Plugin/Marketplace ab Beta | Vorschlag |
+| D-019 | Schweregrad nach Nielsen (0–4) statt P0–P3; zwei Phasen | Vorschlag |
+| D-020 | Accessibility: WCAG 2.2 Stufe AA, Prüfbarkeitsklassen | Vorschlag |
+| D-021 | Zitierweise: eigene Formulierung, Quelle und URL, kein Abdruck | Vorschlag |
 
 ---
 
@@ -94,7 +97,7 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 
 **Stand:** Plan: 0–5. Impeccable nutzt 0–4 für Heuristiken und Audit-Dimensionen.
 **Abwägung:** Mehr Stufen erhöhen die Streuung bei LLM-Bewertungen (Plan 14, Reproduzierbarkeit). Weniger Stufen lassen sich leichter verankern.
-**Entscheidung:** In Phase 2 anhand von Kalibrierläufen: beide Skalen auf demselben Fixture mehrfach laufen lassen und die Streuung vergleichen. Bis dahin bleibt 0–5 im Plan.
+**Entscheidung:** In Phase 2 anhand von Kalibrierläufen: beide Skalen auf demselben Fixture mehrfach laufen lassen und die Streuung vergleichen. Bis dahin bleibt 0–5 im Plan. **Neu:** Der Score soll nach `methodology.md` (5) per Deckelungsregel aus belegten Befunden und deren Schweregrad abgeleitet werden; NN/g hält Einzelbewertungen für unzuverlässig, das stützt Ableitung statt freier Schätzung.
 
 ## D-012 – Persistenz von Profilen im Nutzerprojekt (offen)
 
@@ -107,6 +110,7 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 **Frage:** Soll `critique` Beobachtung und Bewertung isolieren, wie es Impeccable verbindlich tut (A ohne Sicht auf B)?
 **Pro:** Verhindert Verankerung; stützt Reproduzierbarkeit. **Contra:** Setzt Sub-Agenten voraus, kostet Zeit und Token, nicht in allen Agenten verfügbar.
 **Entscheidung:** In Phase 3 empirisch klären (gleiche Fixtures mit und ohne Isolation, Streuung messen). Alpha läuft im Einzelkontext, mit Eingeschränkt-Hinweis nach D-009 bei fehlenden Werkzeugen.
+**Neu (Quelle):** NN/g empfiehlt 3 bis 5 **unabhängige** Evaluatoren und hält Schweregrade einzelner Personen für unzuverlässig (`research/methodology-sources.md`). Das spricht für einen vertieften Lauf mit mindestens drei unabhängigen Durchläufen. Cursor kann Sub-Agenten laut Zweitquelle nicht verlässlich aus Skills starten; Alternative: getrennte Läufe oder Wiederholung durch den Nutzer.
 
 ## D-014 – Sprache der Skill-Inhalte: Englisch
 
@@ -136,3 +140,19 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 **Vorschlag:** Alpha wird durch Kopieren oder Verlinken des Ordners installiert. Plugin-Manifeste und Marketplace-Dateien kommen frühestens in Beta, getrennt von der Nutzlast. Öffentlicher Cursor-Marketplace und Anthropic-Verzeichnis sind optional nach 1.0.
 **Begründung:** Cursor kennt keinen Direktimport einzelner Skills aus GitHub; dafür sind Plugin und `.cursor-plugin/marketplace.json` nötig, die Aufnahme in den öffentlichen Marketplace ist ein manueller Review. Claude Code hat eigenes Format (`.claude-plugin/marketplace.json`). Unser Layout `skills/<name>/SKILL.md` ist bereits plugin-kompatibel (`research/cursor-compatibility.md`, 4.8), der spätere Aufwand bleibt gering.
 **Offen:** gemeinsames Manifest für beide Agenten, Befehlsname unter Claude-Code-Plugin-Namespace (`/plugin:skill`).
+
+## D-019 – Schweregrad nach Nielsen (0–4) statt P0–P3; zwei Phasen
+
+**Vorschlag:** Schweregrad 0 bis 4 (kein Problem, kosmetisch, geringfügig, gravierend, Katastrophe) aus Häufigkeit, Auswirkung und Persistenz, vergeben **nach** der Befundphase. Schweregrade aus einem Durchlauf tragen den Hinweis „Einzelurteil“.
+**Begründung:** Primärquelle NN-SEV und NN-HE (`research/methodology-sources.md`, `methodology.md` 4). Impeccables P0–P3 ist nicht an einer Primärquelle verankert und bleibt kein Vorbild.
+**Anpassung:** Markteinfluss entfällt für interne Oberflächen; stattdessen Schaden bei Fehlbedienung.
+
+## D-020 – Accessibility: WCAG 2.2 Stufe AA, Prüfbarkeitsklassen
+
+**Vorschlag:** Referenz ist WCAG 2.2, Zielstufe AA. Jedes Kriterium wird einer von drei Prüfbarkeitsklassen zugeordnet (aus Code, mit gerenderter Oberfläche oder Werkzeug, nur mit Hilfstechnik oder Menschen). Ergebnisse tragen die Klasse; ohne Werkzeug gibt es Einschränkung statt Schätzung.
+**Begründung:** W3C-Dokument selbst rät davon ab, AAA allgemein zu verlangen (5.2.1). WCAG gilt für Webinhalte, nicht unmittelbar für native Oberflächen. Die Einteilung ist Eigenentwurf.
+
+## D-021 – Zitierweise: eigene Formulierung, Quelle und URL, kein Abdruck
+
+**Vorschlag:** Fachinhalte aus NN/g und W3C werden in eigenen Worten wiedergegeben, mit Autor, Titel, URL und Abrufdatum. Kein Abdruck von Seitentexten, Beispielen oder Postern. Das gilt für `docs/` und für Referenzdateien des Skills.
+**Begründung:** NN/g erlaubt die Nutzung der Heuristiken mit Nennung von Jakob Nielsen und Adresse, Wiedergabe von Seiteninhalt verlangt weitere Erlaubnis. W3C verweist auf Dokumentnutzungsregeln. Ergänzt D-006.

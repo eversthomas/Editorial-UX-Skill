@@ -12,10 +12,10 @@ Prinzip: **vertikaler Schnitt zuerst.** Erst wenn eine kleine Fähigkeit messbar
 | Agent Skills Spec recherchieren | **erledigt**, mit Lücken (`research/agent-skills-compatibility.md`) |
 | Architektur prüfen und anpassen | **Vorschlag** (`architecture.md`, `decisions.md`) |
 | Implementierungsreihenfolge | dieses Dokument |
-| Nielsen-Heuristiken, Cognitive-Load-Methoden aus Primärquellen einordnen | **offen** |
-| Editorial UX von allgemeinem UI-Design abgrenzen | **offen** (setzt vollständige Lektüre von Impeccable `operate.md`, `shape.md` voraus) |
+| Nielsen-Heuristiken, Cognitive-Load-Methoden aus Primärquellen einordnen | **erledigt** (`research/methodology-sources.md`) |
+| Editorial UX von allgemeinem UI-Design abgrenzen | **erledigt** (`research/impeccable-analysis.md`, 3.4 und 6) |
 | Bestehende CMS- und Admin-UX-Patterns untersuchen | **offen** |
-| `docs/methodology.md` | **offen**, hängt von den drei Punkten davor ab |
+| `docs/methodology.md` | **Entwurf** zur Freigabe (Dimensionen, Evidenz, Schweregrad, Deckelungsregel, Walkthrough) |
 
 ### Vor Abschluss von Phase 1 zu klären
 
