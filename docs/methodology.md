@@ -15,9 +15,9 @@ Editorial UX Skill ist eine **Inspektionsmethode** im Sinne der Usability-Forsch
 2. **Eine einzelne Bewertung ist unzuverlässig.** Das gilt laut NN/g für Schweregrade einer einzelnen Person; Mehrfachbewertung stabilisiert [Quelle: NN-SEV, NN-HE]. Für einen Agenten heißt das: Wiederholte, unabhängige Durchläufe sind die Methode der Wahl, wo Verlässlichkeit zählt (Abschnitt 10).
 3. **Der Umfang wird eng gewählt:** eine Aufgabe, ein Bereich, eine Nutzergruppe, ein Gerätetyp [Quelle: NN-HE]. Das entspricht unserer Grundregel „nicht jede Aufgabe braucht alle Schritte“.
 
-## 2. Dimensionen A–J und ihre Verankerung
+## 2. Dimensionen A–I und ihre Verankerung
 
-Die Dimensionen aus dem Projektplan werden Quellen zugeordnet. Alle zehn Heuristiken von Nielsen sind abgedeckt.
+Die Dimensionen aus dem Projektplan werden Quellen zugeordnet. Alle zehn Heuristiken von Nielsen sind abgedeckt. Eine frühere Dimension J „Joy of Use“ ist gestrichen (D-023).
 
 | Dim. | Name | Nielsen-Heuristik (NN-H) | Weitere Quellen |
 |---|---|---|---|
@@ -30,11 +30,10 @@ Die Dimensionen aus dem Projektplan werden Quellen zugeordnet. Alle zehn Heurist
 | G | Arbeitsfluss | 7 Flexibilität und Effizienz | NN-CW (Aufgabenschritte); WCAG 3.3.7 |
 | H | Visuelle Qualität | 8, 4 | WCAG 1.4.3, 1.4.11; visuelle Hierarchie, Squint-Test (NN-VH) |
 | I | Accessibility | (keine; eigener Standard) | WCAG 2.2, Zielstufe AA; ARIA APG |
-| J | Joy of Use | 1, 3, 7, 8 (nur indirekt) | **keine Primärquelle** |
 
 Die Prüffragen je Dimension stehen im Projektplan (6.1). Sie sind Leitfragen, keine vollständige Checkliste.
 
-**Hinweis zu J:** Joy of Use ist eine **Eigenkonstruktion** [Eigenentwurf]. Die fünf Kriterien (Kontrollgefühl, Rückmeldungsqualität, Reibung, Konzentration, Souveränität) lassen sich auf Heuristiken zurückführen, aber nicht auf eine Quelle, die „Freude“ belegbar messbar macht. Zusätzlich warnt NN/g, dass Gefallen Probleme verdecken kann (Aesthetic-Usability-Effekt, NN-AU). Deshalb: **J wird getrennt ausgewiesen und fließt in keinen Gesamtwert ein.** Es liegt eine Empfehlung vor, J als Dimension ganz zu streichen und seine beobachtbaren Anteile den Dimensionen D, E, F, G zuzuordnen (D-023, offen).
+**Hinweis zur gestrichenen Dimension J (D-023):** Es gibt keine gelesene Primärquelle, die Freude messbar macht, und NN/g warnt, dass Gefallen Probleme verdecken kann (Aesthetic-Usability-Effekt, NN-AU). Die beobachtbaren Anteile werden dort bewertet, wo sie hingehören: Rückmeldungsqualität in D, Ruhe und Konzentration in E, Kontrollgefühl in F, Reibung und Souveränität in G (Abschnitt 9). Wo ein Urteil zu Freude oder Zufriedenheit für eine Entscheidung zählt, empfiehlt der Bericht einen Test mit echten Nutzern.
 
 ## 3. Evidenzstufen [Eigenentwurf, gestützt auf NN-HE]
 
@@ -123,7 +122,7 @@ Nicht übernommen:
 
 ## 7a. Wahrnehmungsprüfung mit Gestaltprinzipien [Quelle: NN-GP, NN-GS, NN-CR, NN-VH; Anwendung Eigenentwurf]
 
-Die Gruppierungsprinzipien beschreiben, **wie Nutzer entscheiden, was zusammengehört und was wichtig ist**. Sie sind ein Prüfvokabular für die Dimensionen A, C, E und H sowie für die Frage 2 und 3 des Walkthroughs (Abschnitt 8). Sie sind **keine Bewertungsgröße für Freude** (siehe D-023).
+Die Gruppierungsprinzipien beschreiben, **wie Nutzer entscheiden, was zusammengehört und was wichtig ist**. Sie sind ein Prüfvokabular für die Dimensionen A, C, E und H sowie für die Frage 2 und 3 des Walkthroughs (Abschnitt 8). Sie sind **keine Bewertungsgröße für Freude** (Dimension gestrichen, D-023).
 
 **Prinzipien** (Kurzfassung, Details in `research/methodology-sources.md`):
 
@@ -173,19 +172,19 @@ Ein „Nein“ lässt den Schritt scheitern. Die Methode zielt auf **Erlernbarke
 - Der Agent ersetzt den **Workshop** (mehrere Rollen, Moderator, Protokollant). Das Ergebnis ist **ein** simulierter Durchgang und damit eine Hypothese. Der Bericht empfiehlt echte Tests mit Nutzern; die Quelle nennt für qualitative Tests als Regel 5 Teilnehmende [Quelle: NN-5].
 - Für Standardmuster ist die Methode überdimensioniert [Quelle: NN-CW]. `walkthrough` konzentriert sich auf **abweichende, komplexe oder fehleranfällige Abläufe** (Veröffentlichen, Mehrfachbearbeitung, Freigaben).
 
-## 9. Joy of Use (Dimension J) [Eigenentwurf]
+## 9. Arbeitsqualität ohne eigene Dimension [Eigenentwurf; Heuristiken als Quelle]
 
-Beobachtbare Merkmale (Plan 6.1 J), jeweils an Heuristiken rückgebunden:
+Das Produktziel „Menschen arbeiten gerne damit“ bleibt, wird aber **nicht als eigene Note** bewertet. Seine beobachtbaren Merkmale sind Prüfpunkte innerhalb der Dimensionen, jeweils an Heuristiken zurückgebunden:
 
-| Merkmal | Rückbindung |
-|---|---|
-| Kontrollgefühl (Undo, erkennbarer Zustand) | NN-H 3, 1 |
-| Rückmeldungsqualität | NN-H 1, 9 |
-| Reibung (Umwege, Wiederholungen) | NN-H 7, 8 |
-| Konzentration (Ablenkungsfreiheit) | NN-H 8; NN-CL |
-| Souveränität (Beschleuniger, Voreinstellungen) | NN-H 7 |
+| Merkmal | Dimension | Rückbindung |
+|---|---|---|
+| Rückmeldungsqualität | D | NN-H 1, 9 |
+| Konzentration und Ruhe (wenig Ablenkung, geringes visuelles Rauschen) | E | NN-H 8; NN-CL |
+| Kontrollgefühl (Rückgängigmachen, erkennbarer Zustand) | F | NN-H 3, 1 |
+| Reibung (Umwege, Wiederholungen) | G | NN-H 7, 8 |
+| Souveränität (Beschleuniger, Voreinstellungen) | G | NN-H 7 |
 
-Status: **keine Quelle für Messbarkeit.** Bis zur Kalibrierung wird J als eigene Spalte ausgewiesen, nicht verrechnet.
+**Grenze:** Das sind Stellvertreter. Wie sich die Arbeit anfühlt, lässt sich nicht durch Inspektion belegen. Der Aesthetic-Usability-Effekt (NN-AU) zeigt, dass Gefallen Probleme verdecken kann; ein gut aussehendes System darf deshalb keinen Befund mit Schweregrad 3 oder 4 aufwiegen (Deckelungsregel, Abschnitt 5).
 
 ## 10. Reproduzierbarkeit [Quelle: NN-HE, NN-SEV; Messung Eigenentwurf]
 
@@ -201,7 +200,7 @@ NN/g empfiehlt 3 bis 5 **unabhängige** Evaluatoren, deren Ergebnisse erst danac
 Jeder Bericht (`critique`) enthält, in dieser Reihenfolge:
 
 1. Kopfzeile mit Umfang (Aufgabe, Nutzergruppe, Gerät) und ggf. `⚠️ Eingeschränkt`.
-2. Dimensionsübersicht A–J: Score oder „nicht bewertbar“, Blocker markiert, J getrennt.
+2. Dimensionsübersicht A–I: Score oder „nicht bewertbar“, Blocker markiert.
 3. Befunde mit Evidenzstufe, Fundstelle, Heuristik/Kriterium, Kontext, Schweregrad (mit „Einzelurteil“-Hinweis).
 4. Hypothesen und Annahmen getrennt.
 5. Verbesserungsvorschläge priorisiert nach Schweregrad.
@@ -213,7 +212,7 @@ Jeder Bericht (`critique`) enthält, in dieser Reihenfolge:
 |---|---|
 | Skalenbreite 0–5 oder 0–4 (D-011) | Kalibrierlauf in Phase 2 |
 | Deckelungsregel (Abschnitt 5) | Vergleich mit Referenzurteilen und Streuung in Phase 2 |
-| Joy of Use als Dimension | **Empfehlung: streichen** (D-023); beobachtbare Anteile in D, E, F, G aufteilen; Entscheidung steht aus |
+| Joy of Use | **Gestrichen** (D-023); Literatur zu hedonischer Qualität und Flow nicht gelesen und nicht erforderlich |
 | Gestaltprinzipien über Nähe, Ähnlichkeit, Region hinaus | Originalliteratur oder weitere Quellen lesen, bevor Geschlossenheit, Kontinuität, Figur und Grund, Prägnanz aufgenommen werden |
 | Germane Load, Arbeitsgedächtnis-Schwellen | Primärliteratur prüfen oder verzichten |
 | WCAG-Prüfbarkeitstabelle | Phase 2, mit `references/accessibility.md` |

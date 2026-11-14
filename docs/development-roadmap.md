@@ -32,7 +32,7 @@ Reihenfolge (jeder Schritt ist einzeln prüfbar):
 |---|---|---|
 | 1 | Layout anlegen (`skills/editorial-ux-skill/…`, `evals/`, `tests/`) | Struktur entspricht `architecture.md` |
 | 2 | Strukturtest: `skills-ref validate`, Namensregel, Verweise, Budgets (zuerst mit Platzhalterdateien) | Test läuft grün/rot, wie erwartet |
-| 3 | `references/methodology.md`: Dimensionen A–J, Skalenanker, Evidenzstufen, Schweregrade | Anker für jede Stufe vorhanden |
+| 3 | `references/methodology.md`: Dimensionen A–I, Skalenanker, Evidenzstufen, Schweregrade | Anker für jede Stufe vorhanden |
 | 4 | Testprojekt D als Fixture mit **versteckter Lösungsliste** (eingebaute Probleme je Dimension) | Liste von einer zweiten Person gegengelesen |
 | 5 | **Baseline ohne Skill** auf Testprojekt D (mehrere Läufe) | `grading.json`, `timing.json` liegen vor |
 | 6 | `SKILL.md` (nur Prinzipien, Befehlstabelle, Ladetabelle, Gotchas) | < 500 Zeilen, < 5000 Token |
@@ -49,7 +49,7 @@ Nicht in Phase 2: `discover`, `audit`, Adapter, Pattern-Bibliothek, Skripte.
 
 1. `discover` und `audit`, jeweils mit eigener Befehlsanleitung und Vorlage.
 2. Entscheidung zu D-012 (Profil-Persistenz) und D-013 (Isolation) anhand von Messungen.
-3. Aufgabenbasierte Analyse (Grundlage für `walkthrough`), Cognitive-Load-Bewertung, Joy-of-Use-Kriterien kalibrieren.
+3. Aufgabenbasierte Analyse (Grundlage für `walkthrough`), Cognitive-Load-Bewertung und beobachtbare Arbeitsqualität (Kontrolle, Ruhe, Souveränität, Reibung) kalibrieren.
 4. Reproduzierbarkeit messen (mehrere Läufe, Streuung der Dimensionsscores und der Top-3-Priorisierung).
 
 ## Phase 4–7

@@ -14,7 +14,7 @@ Frühe Konzeptionsphase. Es gibt noch keine lauffähige Skill-Version.
 
 1. **Understand the System:** Erst das vorhandene System verstehen, dann gestalten.
 2. **Design for the User:** Die tatsächliche Arbeitsrealität der Benutzer bestimmt die Gestaltung.
-3. **Joy is a Quality Criterion:** Effizienz, Verständlichkeit, Barrierefreiheit und Freude an der Benutzung sind gleichwertig.
+3. **Good Work is the Measure:** Effizienz, Verständlichkeit, Barrierefreiheit und Kontrolle über die eigene Arbeit sind gleichwertig. Gerne arbeiten zeigt sich an Kontrolle, Ruhe und Souveränität.
 
 ## Geplante Befehle
 

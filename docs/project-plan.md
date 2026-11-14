@@ -31,6 +31,8 @@ Grundlage: `research/impeccable-analysis.md`, `research/agent-skills-compatibili
 9. **Evidenz- und Eingeschränkt-Regeln** in `SKILL.md` (D-009, Kap. 6.2).
 10. **Offene Entscheidungen** D-011 (Skalenbreite), D-012 (Profil-Persistenz), D-013 (Isolation) werden in Phase 2/3 anhand von Messungen entschieden.
 11. **Namensregel:** Ordnername = `name` = `editorial-ux-skill` (Spec, Cursor).
+12. **Joy of Use entfällt als Dimension** (D-023). Neun Dimensionen A–I; Prinzip 3 neu gefasst.
+13. **Methodik** in `methodology.md` entworfen: Schweregrad nach Nielsen, Evidenzstufen, Deckelungsregel, Wahrnehmungsprüfung (D-019 bis D-022).
 
 ## Änderungen von Version 1 zu Version 2
 
@@ -40,7 +42,7 @@ Rückmeldungen zum ersten Entwurf:
 2. Befehle klar abgegrenzt, mit Befehlsmatrix (Kap. 5).
 3. „test“ wird zu `walkthrough` und als Simulation gekennzeichnet (Kap. 5, 6.3).
 4. Reproduzierbares Scoring durch verankerte Skalen (Kap. 6.2).
-5. Joy of Use mit beobachtbaren Kriterien (Kap. 6.1 J).
+5. Joy of Use mit beobachtbaren Kriterien (Kap. 6.1 J). *In Version 3 wieder gestrichen, siehe unten.*
 6. Regel zum Umgang mit vorhandenen Designsystemen (Kap. 3.4).
 7. Plattformadapter: zuerst generisch und ProcessWire (Kap. 7).
 8. Leitplanken für Code-Änderungen (Kap. 9.4).
@@ -68,7 +70,6 @@ Der Skill verbindet:
 - Workflow Design
 - Usability Engineering
 - Design Systems
-- Joy of Use
 
 Der Skill ist nicht auf ein bestimmtes CMS, Framework oder Backend-System beschränkt. Er soll gleichermaßen für WordPress, ProcessWire, Drupal, Headless CMS, individuell entwickelte CMS, interne Verwaltungsanwendungen, Dashboards und andere administrative Werkzeuge funktionieren.
 
@@ -82,7 +83,7 @@ Seine Qualität bemisst sich nicht allein an der technischen Funktionalität ode
 
 1. **Understand the System** – Zuerst das vorhandene System, seine Architektur, seine Möglichkeiten und Einschränkungen verstehen. Keine vorschnellen Designentscheidungen.
 2. **Design for the User** – Die Arbeitsrealität, mentalen Modelle, Fähigkeiten und Bedürfnisse der tatsächlichen Benutzer bestimmen die Gestaltung.
-3. **Joy is a Quality Criterion** – Effizienz, Verständlichkeit, Barrierefreiheit und Freude an der Benutzung sind gleichwertige Qualitätsdimensionen.
+3. **Good Work is the Measure** – Effizienz, Verständlichkeit, Barrierefreiheit und Kontrolle über die eigene Arbeit sind gleichwertige Qualitätsdimensionen. Ob Menschen gerne mit einem System arbeiten, zeigt sich an Kontrolle, Ruhe, Souveränität und geringer Reibung. Freude selbst lässt sich nur mit echten Nutzern messen und wird deshalb nicht als eigene Note bewertet (D-023).
 
 ---
 
@@ -214,7 +215,7 @@ Schwerpunkte:
 - Responsives Verhalten
 - Verständlichkeit
 - Aufgaben-Effizienz
-- Joy of Use
+- Kontrolle, Ruhe und Souveränität bei der Arbeit (beobachtbare Stellvertreter für „gerne arbeiten“)
 
 ---
 
@@ -233,7 +234,7 @@ editorial-ux-skill/                      # Repository
 │       ├── SKILL.md                     # Prinzipien, Befehlstabelle, Ladetabelle, Gotchas
 │       ├── references/
 │       │   ├── cmd-critique.md          # Befehlsanleitung
-│       │   ├── methodology.md           # Dimensionen A–J, Skalenanker, Evidenzstufen
+│       │   ├── methodology.md           # Dimensionen A–I, Skalenanker, Evidenzstufen
 │       │   ├── principles.md
 │       │   └── anti-patterns.md
 │       └── assets/
@@ -271,7 +272,7 @@ editorial-ux-skill/
 │       │   ├── system-intelligence.md   editorial-experience.md
 │       │   ├── interaction-design.md    information-architecture.md
 │       │   ├── cognitive-load.md        visual-experience.md
-│       │   ├── joy-of-use.md            accessibility.md
+│       │   ├── accessibility.md
 │       │   └── quality-assurance.md
 │       ├── platforms/
 │       │   ├── custom-backends.md   # Pflicht: generischer Adapter
@@ -322,7 +323,7 @@ Einige Befehle der ersten Version wurden zusammengelegt oder umbenannt, weil sie
 
 | Befehl | Zweck | Stufe |
 |---|---|---|
-| `/editorial-ux-skill critique` | Bestehende UX nach den Dimensionen A–J bewerten (Experten-Evaluation) | Alpha 0.1 |
+| `/editorial-ux-skill critique` | Bestehende UX nach den Dimensionen A–I bewerten (Experten-Evaluation) | Alpha 0.1 |
 | `/editorial-ux-skill discover` | System und redaktionelle Arbeitsrealität untersuchen | Alpha 0.2 |
 | `/editorial-ux-skill audit` | Prüfbare Qualitätskriterien abarbeiten (Accessibility, Konsistenz, Robustheit; bestanden/nicht bestanden) | Alpha 0.2 |
 | `/editorial-ux-skill improve` | Kleinen, abgegrenzten Verbesserungszyklus durchführen (kritisieren → entwerfen → umsetzen → prüfen) | Alpha 0.3 |
@@ -338,7 +339,7 @@ Jeder Befehl muss klar sagen, was er liest, erzeugt und woran er sich abgrenzt.
 | Befehl | Liest (Eingabe) | Erzeugt (Ausgabe) | Verändert Code? | Abgrenzung |
 |---|---|---|---|---|
 | `discover` | Code, Konfiguration, ggf. Rückfragen | Systemprofil, Editorial-Profil | nein | Beschreibt, bewertet nicht |
-| `critique` | UI (Code, Screenshots, Beschreibung); optional Profile | Bewertung nach A–J mit Scores, Belegen, Priorität | nein | Qualitative Experten-Bewertung, nicht bestanden/nicht bestanden |
+| `critique` | UI (Code, Screenshots, Beschreibung); optional Profile | Bewertung nach A–I mit Scores, Belegen, Priorität | nein | Qualitative Experten-Bewertung, nicht bestanden/nicht bestanden |
 | `audit` | UI, Code, ggf. Werkzeugergebnisse | Prüfliste mit Ergebnis je Kriterium | nein | Objektivierbare Kriterien, keine Geschmacksurteile |
 | `walkthrough` | Aufgabendefinition, UI | Schrittprotokoll mit Orientierung, Entscheidungslast, Fehlerrisiko | nein | Aufgaben statt Gesamtoberfläche |
 | `design` | Profile, Befunde, Ziel | Design-Brief, Konzept, Entwurf | nein | Entwirft, setzt nicht um |
@@ -431,17 +432,7 @@ Folgende Dimensionen werden bewertet:
 - Sind Kontraste und Fokuszustände ausreichend?
 - Werden semantische Strukturen und assistive Technologien berücksichtigt?
 
-**J. Joy of Use**
-
-Joy of Use ist eine gleichwertige Qualitätsdimension, wird aber **nur über beobachtbare Merkmale** bewertet, nicht über Geschmack. Prüfkriterien:
-
-- **Kontrollgefühl:** Sind Aktionen rückgängig zu machen? Ist der Systemzustand jederzeit erkennbar?
-- **Rückmeldungsqualität:** Bestätigen Aktionen ihr Ergebnis verständlich und im richtigen Maß?
-- **Reibung:** Gibt es unnötige Unterbrechungen, Wiederholungen oder Umwege?
-- **Konzentration:** Unterstützt die Oberfläche ungestörtes Arbeiten (keine unnötigen Ablenkungen, ruhige Darstellung)?
-- **Souveränität:** Können erfahrene Benutzer schneller arbeiten (Tastenkürzel, Voreinstellungen, Wiederholungshilfen)?
-
-Solange diese Kriterien nicht evaluiert wurden (Phase 6), wird J getrennt ausgewiesen und fließt nicht in einen Gesamtwert ein.
+**Keine eigene Dimension „Joy of Use“ (D-023).** Die frühere Dimension J ist gestrichen. Es gibt keine Primärquelle, die Freude messbar macht, und NN/g warnt, dass Gefallen Probleme verdecken kann. Ihre beobachtbaren Anteile werden in den Dimensionen bewertet: **Rückmeldungsqualität** in D, **Konzentration und Ruhe** in E, **Kontrollgefühl** (Rückgängigmachen, erkennbarer Zustand) in F, **Reibung und Souveränität** (Beschleuniger, Voreinstellungen, Wiederholungshilfen) in G. Wo es für eine Entscheidung zählt, empfiehlt der Bericht einen Test mit echten Nutzern.
 
 ### 6.2 Bewertungssystem
 
@@ -771,7 +762,7 @@ Ziel: Eine funktionsfähige erste Skill-Version, die **eine** Sache messbar gut 
 Aufgaben:
 
 1. Layout anlegen (`skills/editorial-ux-skill/`, `evals/`, `tests/`) und **Strukturtest** (`skills-ref validate`, Namensregel, Verweise, Verweistiefe, Budgets).
-2. `references/methodology.md` mit Dimensionen A–J, verankerten Skalen, Evidenzstufen und Schweregraden; `references/principles.md`, `references/anti-patterns.md`. Jede Referenz nennt ihre **Primärquellen** (D-006).
+2. `references/methodology.md` mit Dimensionen A–I, verankerten Skalen, Evidenzstufen und Schweregraden; `references/principles.md`, `references/anti-patterns.md`. Jede Referenz nennt ihre **Primärquellen** (D-006).
 3. Testprojekt D mit Fixture und **versteckter Lösungsliste**; **Baseline ohne Skill** (mehrere Läufe).
 4. `SKILL.md` (Prinzipien und Kernregeln zuerst, Befehlstabelle, Ladetabelle, Gotchas).
 5. Befehl `critique` (`references/cmd-critique.md`) samt Vorlage `ux-critique.md`.
@@ -791,7 +782,7 @@ Aufgaben:
 1. Befehle `discover` und `audit`.
 2. Aufgabenbasierte Analyse (Grundlage für `walkthrough`).
 3. Cognitive-Load-Bewertung ausarbeiten.
-4. Joy-of-Use-Kriterien erproben und kalibrieren.
+4. Beobachtbare Arbeitsqualität (Kontrolle, Ruhe, Souveränität, Reibung) in den Dimensionen D bis G erproben und kalibrieren.
 5. Priorisierungssystem entwickeln.
 6. Reproduzierbarkeit messen (mehrere Durchläufe).
 

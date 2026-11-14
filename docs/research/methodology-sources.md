@@ -111,7 +111,7 @@ Die NN/g-Artikel führen die Gruppierungsprinzipien auf Gestaltpsychologen der e
 
 | Aussage / Frage | Stand |
 |---|---|
-| **Joy of Use** als bewertbare Dimension | Keine Primärquelle, die Freude messbar macht. Gelesen wurde nur NN-AU, das eher **warnt** (Gefallen kann Probleme verdecken). Unsere Zusammenstellung (Kontrollgefühl, Rückmeldung, Reibung, Konzentration, Souveränität) leitet sich aus den Heuristiken 1, 3, 7, 8 ab, ist aber **eigene Konstruktion**, unvalidiert. Streichung empfohlen (D-023). Literatur zu hedonischer Qualität und Flow ist **nicht gelesen**. |
+| **Joy of Use** als bewertbare Dimension | Keine Primärquelle, die Freude messbar macht. Gelesen wurde nur NN-AU, das eher **warnt** (Gefallen kann Probleme verdecken). Unsere Zusammenstellung (Kontrollgefühl, Rückmeldung, Reibung, Konzentration, Souveränität) leitet sich aus den Heuristiken 1, 3, 7, 8 ab, ist aber **eigene Konstruktion**, unvalidiert. Dimension gestrichen (D-023). Literatur zu hedonischer Qualität und Flow ist **nicht gelesen**. |
 | Gestaltpsychologie im Original (Wertheimer u. a.), Prinzipien Geschlossenheit, Kontinuität, Figur und Grund, Prägnanz, gemeinsames Schicksal | **Nicht gelesen.** Die NN/g-Artikel zu diesen Prinzipien waren unter den geprüften Adressen nicht auffindbar. Übernommen sind nur Nähe, Ähnlichkeit, gemeinsame Region und visuelle Hierarchie. |
 | **Germane Load** (förderliche Last) | In NN-CL nicht enthalten. Nicht übernommen, bis Sweller-Primärliteratur geprüft ist. |
 | Feste Schwellen („≤ 4 Elemente im Arbeitsgedächtnis“, „5–7 am Limit“) | **Nicht belegt** (Cowan, Miller nicht gelesen). Werden nicht als Regel verwendet. |

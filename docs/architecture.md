@@ -25,7 +25,7 @@ editorial-ux-skill/                     # Repository (Kleinschreibung, siehe D-0
 │       ├── SKILL.md                    # Prinzipien, Befehlstabelle, Ladetabelle, Gotchas
 │       ├── references/                 # Fachwissen und Befehlsanleitungen (flach)
 │       │   ├── cmd-critique.md         # Befehlsanleitung
-│       │   ├── methodology.md          # Dimensionen A–J, Skalenanker, Evidenzstufen
+│       │   ├── methodology.md          # Dimensionen A–I, Skalenanker, Evidenzstufen
 │       │   ├── principles.md
 │       │   ├── anti-patterns.md
 │       │   └── …                       # wächst nach Bedarf

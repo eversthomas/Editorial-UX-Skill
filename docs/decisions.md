@@ -32,7 +32,7 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 | D-020 | Accessibility: WCAG 2.2 Stufe AA, Prüfbarkeitsklassen | Vorschlag |
 | D-021 | Zitierweise: eigene Formulierung, Quelle und URL, kein Abdruck | Vorschlag |
 | D-022 | Gestaltprinzipien als Wahrnehmungsprüfung (A, C, E, H; Walkthrough Frage 2 und 3) | Vorschlag |
-| D-023 | Joy of Use als Dimension streichen | Offen (Empfehlung: streichen) |
+| D-023 | Joy of Use als Dimension gestrichen | Akzeptiert |
 
 ---
 
@@ -165,10 +165,8 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 **Begründung:** Primärquellen NN-GP, NN-GS, NN-CR, NN-VH (`research/methodology-sources.md`). Die Prinzipien erklären, warum Nutzer Elemente übersehen oder falsch zuordnen.
 **Grenzen:** Praxisartikel, Originalliteratur nicht gelesen. Weitere klassische Prinzipien (Geschlossenheit, Kontinuität, Figur und Grund, Prägnanz) nicht belegt und nicht Teil des Skills. Nicht geeignet als Maß für Freude.
 
-## D-023 – Joy of Use als Dimension streichen (offen, Empfehlung: streichen)
+## D-023 – Joy of Use als Dimension gestrichen
 
-**Frage:** Soll Dimension J aus der Bewertung entfernt werden?
-**Empfehlung: streichen.** Gründe: (1) Keine Primärquelle macht Freude messbar; (2) die fünf Kriterien sind Eigenentwurf und bestehen aus Merkmalen, die ohnehin in D (Rückmeldung), E (Ruhe, Rauschen), F (Kontrolle, Rückgängigmachen) und G (Souveränität, Reibung) liegen; (3) NN/g warnt, dass Gefallen Probleme verdecken kann, eine Bewertung von „Freude“ würde das Risiko erhöhen; (4) ein Agent kann Empfinden nicht beobachten, J bliebe stets Hypothese und wäre im Gesamtwert ohnehin ausgeschlossen.
+**Entscheidung (Projektverantwortlicher, 2026-11-14): Dimension J wird gestrichen.** Gründe: (1) Keine Primärquelle macht Freude messbar; (2) die fünf Kriterien sind Eigenentwurf und bestehen aus Merkmalen, die ohnehin in D (Rückmeldung), E (Ruhe, Rauschen), F (Kontrolle, Rückgängigmachen) und G (Souveränität, Reibung) liegen; (3) NN/g warnt, dass Gefallen Probleme verdecken kann, eine Bewertung von „Freude“ würde das Risiko erhöhen; (4) ein Agent kann Empfinden nicht beobachten, J bliebe stets Hypothese und wäre im Gesamtwert ohnehin ausgeschlossen.
 **Was bleibt:** Das Leitbild „Menschen arbeiten gerne damit“ bleibt als Produktziel, aber über **messbare Stellvertreter** (Kontrolle, Ruhe, Souveränität, geringe Reibung), nicht als eigene Note. Für echte Freude wäre ein Test mit Nutzern nötig; der Bericht darf dies als Empfehlung nennen.
-**Folgen bei Streichung:** Plan Kap. 1 (Prinzip 3), 3.5, 6.1 J, Kap. 10 (Bewertungsliste), 13, Dateiname `joy-of-use.md`, README. Dimensionen A–I (neun).
-**Stand:** Entscheidung beim Projektverantwortlichen.
+**Umgesetzt in:** Plan (Kap. 1 Prinzip 3, 3.5, 4.2, 6.1, Phase 3), `methodology.md` (Abschnitte 2, 9, 11), README, Roadmap. Der Name der Referenzdatei `joy-of-use.md` entfällt. **Neun Dimensionen A–I.** Prinzip 3 heißt jetzt „Good Work is the Measure“.
