@@ -21,20 +21,20 @@ Die Dimensionen aus dem Projektplan werden Quellen zugeordnet. Alle zehn Heurist
 
 | Dim. | Name | Nielsen-Heuristik (NN-H) | Weitere Quellen |
 |---|---|---|---|
-| A | Orientierung | 1 Systemstatus (Position), 4 Konsistenz | WCAG 2.4.2, 2.4.5, 2.4.6, 3.2.3 |
+| A | Orientierung | 1 Systemstatus (Position), 4 Konsistenz | WCAG 2.4.2, 2.4.5, 2.4.6, 3.2.3; Hierarchie und Gruppierung (NN-VH) |
 | B | Aufgabenverständlichkeit | 2 System und reale Welt, 10 Hilfe | WCAG 3.3.2, 2.5.3 |
-| C | Informationsarchitektur | 2, 4, 8 | WCAG 1.3.1; mentale Modelle (NN-CL) |
+| C | Informationsarchitektur | 2, 4, 8 | WCAG 1.3.1; mentale Modelle (NN-CL); Nähe, Ähnlichkeit, gemeinsame Region (NN-GP, NN-GS, NN-CR) |
 | D | Interaktionsqualität | 1 Systemstatus, 4, 7 | WCAG 4.1.3, 3.2.1, 3.2.2; NN-CX (Wartezeiten > 10 s) |
-| E | Kognitive Belastung | 6 Wiedererkennen, 8 | NN-CL (intrinsisch/extraneous), NN-PD; WCAG 3.3.7 |
+| E | Kognitive Belastung | 6 Wiedererkennen, 8 | NN-CL (intrinsisch/extraneous), NN-PD; WCAG 3.3.7; Gruppierung als Entlastung (NN-GP) |
 | F | Fehlertoleranz | 3 Nutzerkontrolle, 5 Fehlervermeidung, 9 Fehlerbehebung | NN-SL (Slips/Mistakes); WCAG 3.3.1, 3.3.3, 3.3.4 |
 | G | Arbeitsfluss | 7 Flexibilität und Effizienz | NN-CW (Aufgabenschritte); WCAG 3.3.7 |
-| H | Visuelle Qualität | 8, 4 | WCAG 1.4.3, 1.4.11 |
+| H | Visuelle Qualität | 8, 4 | WCAG 1.4.3, 1.4.11; visuelle Hierarchie, Squint-Test (NN-VH) |
 | I | Accessibility | (keine; eigener Standard) | WCAG 2.2, Zielstufe AA; ARIA APG |
 | J | Joy of Use | 1, 3, 7, 8 (nur indirekt) | **keine Primärquelle** |
 
 Die Prüffragen je Dimension stehen im Projektplan (6.1). Sie sind Leitfragen, keine vollständige Checkliste.
 
-**Hinweis zu J:** Joy of Use ist eine **Eigenkonstruktion** [Eigenentwurf]. Die fünf Kriterien (Kontrollgefühl, Rückmeldungsqualität, Reibung, Konzentration, Souveränität) lassen sich auf Heuristiken zurückführen, aber nicht auf eine Quelle, die „Freude“ belegbar messbar macht. Deshalb: **J wird getrennt ausgewiesen und fließt in keinen Gesamtwert ein**, bis die Kalibrierung zeigt, dass die Bewertung stabil ist (D-011 ff.).
+**Hinweis zu J:** Joy of Use ist eine **Eigenkonstruktion** [Eigenentwurf]. Die fünf Kriterien (Kontrollgefühl, Rückmeldungsqualität, Reibung, Konzentration, Souveränität) lassen sich auf Heuristiken zurückführen, aber nicht auf eine Quelle, die „Freude“ belegbar messbar macht. Zusätzlich warnt NN/g, dass Gefallen Probleme verdecken kann (Aesthetic-Usability-Effekt, NN-AU). Deshalb: **J wird getrennt ausgewiesen und fließt in keinen Gesamtwert ein.** Es liegt eine Empfehlung vor, J als Dimension ganz zu streichen und seine beobachtbaren Anteile den Dimensionen D, E, F, G zuzuordnen (D-023, offen).
 
 ## 3. Evidenzstufen [Eigenentwurf, gestützt auf NN-HE]
 
@@ -121,6 +121,39 @@ Nicht übernommen:
 
 - **Feste Zahlenschwellen** („≤ 4 Optionen“) und **germane Load**: nicht aus Primärquellen belegt (`methodology-sources.md`, 4). Bis dahin gilt als Prüffrage „Wie viele Entscheidungen und Merkpunkte verlangt dieser Schritt?“ **ohne** feste Grenze. Bei der Aufgabenanalyse werden Entscheidungen und Merkpunkte **gezählt und berichtet**, nicht gegen eine Schwelle bewertet.
 
+## 7a. Wahrnehmungsprüfung mit Gestaltprinzipien [Quelle: NN-GP, NN-GS, NN-CR, NN-VH; Anwendung Eigenentwurf]
+
+Die Gruppierungsprinzipien beschreiben, **wie Nutzer entscheiden, was zusammengehört und was wichtig ist**. Sie sind ein Prüfvokabular für die Dimensionen A, C, E und H sowie für die Frage 2 und 3 des Walkthroughs (Abschnitt 8). Sie sind **keine Bewertungsgröße für Freude** (siehe D-023).
+
+**Prinzipien** (Kurzfassung, Details in `research/methodology-sources.md`):
+
+| Prinzip | Wirkung | Typische Verletzung in Redaktionsoberflächen (Eigenentwurf, Beispiele zu prüfen) |
+|---|---|---|
+| Nähe | Naheliegendes wirkt zusammengehörig | Aktion „Veröffentlichen“ steht weit weg vom Statusfeld; Formular mit 20 Feldern ohne Gruppen; verwandte Felder durch Fremdes getrennt |
+| Ähnlichkeit | Gleiches Aussehen wirkt gleichartig und gleich wichtig | Mehrere gleich gestaltete Schaltflächen ohne erkennbare Hauptaktion; dekoratives Element sieht klickbar aus; gleiche Symbole für verschiedene Funktionen |
+| Gemeinsame Region | Rahmen oder Hintergrund bilden eine Gruppe, stärker als Nähe und Ähnlichkeit | Zu viele Rahmen (Unruhe, „falsche Böden“); fehlende Trennung von Navigation und Inhalt |
+| Visuelle Hierarchie | Kontrast, Größe und Gruppierung lenken den Blick | Alles gleich laut; ungewollte Betonung durch ein sehr farbiges Medienelement |
+
+**Rangfolge laut Quellen:** Gemeinsame Region kann Nähe und Ähnlichkeit überstimmen; Nähe kann Ähnlichkeit überstimmen; Ähnlichkeit ist am widerstandsfähigsten gegenüber räumlicher Verteilung. Bei **widersprüchlichen Hinweisen** (etwa Nähe zeigt Gruppe A, Farbe zeigt Gruppe B) ist das ein Befund.
+
+**Prüffragen:**
+
+1. Entspricht die **wahrgenommene** Gruppierung der **fachlichen** Zusammengehörigkeit?
+2. Steht jede Aktion bei dem Objekt, auf das sie wirkt?
+3. Ist die wichtigste Aktion der Ansicht erkennbar die wichtigste?
+4. Wirken unterschiedliche Dinge versehentlich gleich (Form, Farbe, Symbol)?
+5. Wirken dekorative Dinge klickbar?
+6. Sind Container sparsam eingesetzt, oder genügt Nähe?
+7. Bleibt die Hierarchie auch mit echten Inhalten stabil (nicht nur mit Platzhaltern)?
+
+**Prüfbarkeit [Eigenentwurf]:**
+
+- **Klasse 1 (aus Code):** Struktur, Abstände und Gruppierungen aus Markup und Stylesheet ableitbar. Die Wahrnehmung selbst bleibt dennoch eine **Hypothese**.
+- **Klasse 2 (gerenderte Oberfläche):** Squint-Test (Verwischen, Quelle NN-VH), tatsächliche Betonung, Abstände in der Darstellung. Ohne Screenshot oder Browser nur Hypothese mit `⚠️ Eingeschränkt`.
+- Praxisrichtwerte der Quelle (höchstens drei Schriftgrößen, höchstens zwei große Elemente, höchstens zwei primäre und zwei sekundäre Farben, höchstens drei Kontrastvarianten) dienen als **Anhaltspunkte, keine Regeln**.
+
+**Grenzen:** Die Prinzipien beschreiben Wirkrichtungen, nicht die Schwere. Die Schwere bleibt Häufigkeit, Auswirkung und Persistenz (Abschnitt 4). Die Quellen sind Praxisartikel, die Originalliteratur zur Gestaltpsychologie ist nicht gelesen. Die klassischen Prinzipien Geschlossenheit, Kontinuität, Figur und Grund, Prägnanz und gemeinsames Schicksal sind **nicht belegt** und bleiben außerhalb des Skills, bis eine Quelle gelesen ist.
+
 ## 8. Aufgabenbasierte Prüfung: `walkthrough` [Quelle: NN-CW; Erweiterungen Eigenentwurf]
 
 **Kern aus der Quelle:** Aufgabe in Schritte zerlegen. Je Schritt vier Fragen, aus Sicht einer festgelegten Persona:
@@ -135,6 +168,7 @@ Ein „Nein“ lässt den Schritt scheitern. Die Methode zielt auf **Erlernbarke
 **Anpassung an Redaktionsarbeit [Eigenentwurf]:**
 
 - Redakteure nutzen Systeme **täglich**; Erlernbarkeit ist nur ein Teil. Deshalb ergänzt jeder Schritt (nicht Teil der Originalmethode, im Bericht als Erweiterung gekennzeichnet): **Effizienz** (Anzahl der Handlungen und Wechsel), **Entscheidungslast** (Anzahl der Entscheidungen und Merkpunkte), **Fehlerrisiko** (Slip- und Mistake-Potenzial, NN-SL) und **Rückgängigmachbarkeit**.
+- **Wahrnehmungsprüfung zu Frage 2 und 3:** Frage 2 („Bemerkt die Persona, dass die richtige Handlung verfügbar ist?“) wird mit den Prüffragen aus Abschnitt 7a (Nähe, Hierarchie, Tunnelblick) untermauert, Frage 3 („Ordnet sie die Handlung dem Ziel zu?“) mit Ähnlichkeit und Gruppierung. Das ist eine **Erweiterung** und kein Teil der Originalmethode.
 - **Personas** kommen aus dem Editorial-Profil (`discover`). Fehlt es, werden sie als **Annahme** gekennzeichnet; keine erfundenen Nutzer.
 - Der Agent ersetzt den **Workshop** (mehrere Rollen, Moderator, Protokollant). Das Ergebnis ist **ein** simulierter Durchgang und damit eine Hypothese. Der Bericht empfiehlt echte Tests mit Nutzern; die Quelle nennt für qualitative Tests als Regel 5 Teilnehmende [Quelle: NN-5].
 - Für Standardmuster ist die Methode überdimensioniert [Quelle: NN-CW]. `walkthrough` konzentriert sich auf **abweichende, komplexe oder fehleranfällige Abläufe** (Veröffentlichen, Mehrfachbearbeitung, Freigaben).
@@ -179,7 +213,8 @@ Jeder Bericht (`critique`) enthält, in dieser Reihenfolge:
 |---|---|
 | Skalenbreite 0–5 oder 0–4 (D-011) | Kalibrierlauf in Phase 2 |
 | Deckelungsregel (Abschnitt 5) | Vergleich mit Referenzurteilen und Streuung in Phase 2 |
-| Joy of Use messbar? | Phase 3, Messung der Streuung; ggf. streichen oder als Perspektive führen |
+| Joy of Use als Dimension | **Empfehlung: streichen** (D-023); beobachtbare Anteile in D, E, F, G aufteilen; Entscheidung steht aus |
+| Gestaltprinzipien über Nähe, Ähnlichkeit, Region hinaus | Originalliteratur oder weitere Quellen lesen, bevor Geschlossenheit, Kontinuität, Figur und Grund, Prägnanz aufgenommen werden |
 | Germane Load, Arbeitsgedächtnis-Schwellen | Primärliteratur prüfen oder verzichten |
 | WCAG-Prüfbarkeitstabelle | Phase 2, mit `references/accessibility.md` |
 | ARIA-Muster | APG-Seiten auswerten |

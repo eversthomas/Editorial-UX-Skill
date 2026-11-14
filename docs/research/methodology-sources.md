@@ -15,6 +15,11 @@ Recherche zu Phase 1 (Projektplan Kap. 12, Aufgaben 4, 5, 9). Diese Datei hält 
 | NN-SL | Laubheimer: „Slips“ (Error Prevention), 2015. https://www.nngroup.com/articles/slips/ | Einleitung und Fehlertypen |
 | NN-PD | Nielsen: „Progressive Disclosure“, 2006. https://www.nngroup.com/articles/progressive-disclosure/ | Einleitung |
 | NN-5 | Nielsen: „How Many Test Users in a Usability Study?“, 2012. https://www.nngroup.com/articles/how-many-test-users/ | Zusammenfassung |
+| NN-GP | Harley: „Proximity Principle in Visual Design“, 2020. https://www.nngroup.com/articles/gestalt-proximity/ | größtenteils |
+| NN-GS | Harley: „Similarity Principle in Visual Design“, 2020. https://www.nngroup.com/articles/gestalt-similarity/ | größtenteils (Farbe, Form, Größe) |
+| NN-CR | Harley: „The Principle of Common Region: Containers Create Groupings“, 2020. https://www.nngroup.com/articles/common-region/ | größtenteils |
+| NN-VH | Gordon: „Visual Hierarchy in UX: Definition“, 2021. https://www.nngroup.com/articles/visual-hierarchy-ux-definition/ | größtenteils |
+| NN-AU | Moran: „The Aesthetic-Usability Effect“, 2024, zuletzt geprüft 2026-09-01. https://www.nngroup.com/articles/aesthetic-usability-effect/ | größtenteils |
 | W-22 | W3C: „Web Content Accessibility Guidelines (WCAG) 2.2“, W3C Recommendation 2024-12-12. https://www.w3.org/TR/WCAG22/ | Erfolgskriterien-Liste, Stufen, ausgewählte Kriterien im Wortlaut, Konformität 5.2.1 |
 | W-APG | W3C: „ARIA Authoring Practices Guide“. https://www.w3.org/WAI/ARIA/apg/ | nur Startseite (Zweck) |
 
@@ -75,6 +80,23 @@ Ebenfalls geladen, aber **nicht ausgewertet:** NN „Recognition and Recall“, 
 
 - Beschreibt, wie ARIA-Semantik auf gängige Muster und Widgets angewendet wird (Rollen, Zustände, Tastaturbedienung). Die Muster selbst wurden noch nicht ausgewertet; die Seite eignet sich als Quelle für `references/accessibility.md` und `patterns/*`.
 
+### Gestaltprinzipien und visuelle Hierarchie (NN-GP, NN-GS, NN-CR, NN-VH)
+
+Die NN/g-Artikel führen die Gruppierungsprinzipien auf Gestaltpsychologen der ersten Hälfte des 20. Jahrhunderts zurück (Originalliteratur nicht gelesen). „Gemeinsame Region“ kam später hinzu.
+
+- **Nähe:** Nahe beieinander liegende Elemente gelten als zusammengehörig. Das kann konkurrierende Hinweise wie gleiche Farbe oder Form übertrumpfen. Weit entfernte Elemente werden von aufgabenfokussierten Nutzern leicht übersehen („Tunnelblick“). Unverwandte Elemente in einer Gruppe tarnen einzelne davon. Die Nähe kann sich in responsiven Layouts verschieben. Zusammengehörige Formularfelder in sinnvollen Gruppen wirken leichter ausfüllbar (Chunking).
+- **Ähnlichkeit:** Gleiche Farbe, Form oder Größe lässt Elemente verwandt wirken, auch wenn sie verteilt liegen; sie wird oft von Nähe oder Region überstimmt, ist aber besonders widerstandsfähig. Fallen: ein dekoratives Symbol in der Farbe einer Schaltfläche wirkt klickbar; gleichfarbige Schaltflächen wirken gleich wichtig; gleiche oder sehr ähnliche Symbole für verschiedene Kategorien signalisieren fälschlich Verwandtschaft.
+- **Gemeinsame Region:** Elemente innerhalb einer Begrenzung (Rahmen, Hintergrund) gelten als Gruppe. Das kann Nähe und Ähnlichkeit überstimmen. **Überverwendung** erzeugt visuelle Unruhe und „falsche Böden“, die zum Aufhören des Scrollens verleiten; oft genügt Nähe allein.
+- **Visuelle Hierarchie:** Entsteht durch Kontrast (Farbe, Wert, Sättigung), Größe und Gruppierung. Der **Squint-Test** (Ansicht leicht verwischen) zeigt, welche Gruppen und Betonungen tatsächlich wirken, auch unbeabsichtigte durch starke Inhalte wie ein sehr farbiges Foto. Praxisrichtwerte der Autorin (keine Normen): höchstens drei Schriftgrößen, höchstens zwei große Elemente, höchstens zwei primäre und zwei sekundäre Farben, höchstens drei Kontrastvarianten. Farbe nicht als einziges Mittel einsetzen.
+
+**Einordnung:** Praxisartikel, keine Primärforschung. Sie beschreiben **Wirkrichtungen**, keine Messgrößen.
+
+### Aesthetic-Usability-Effekt (NN-AU)
+
+- Ansprechend gestaltete Oberflächen werden als besser bedienbar wahrgenommen, Nutzer verzeihen dann **kleine** Probleme, **große nicht**.
+- Der Effekt kann Probleme **verdecken**: In Tests lobten Teilnehmende das Aussehen trotz deutlicher Schwierigkeiten. Aussagen zur Optik sind deshalb mit dem tatsächlichen Verhalten abzugleichen.
+- **Folge für uns:** Gefallen ist kein Beleg für Bedienbarkeit. Das ist ein Argument **gegen** eine Bewertung von „Freude“ ohne Verhaltensbelege.
+
 ### Teststärke (NN-5)
 
 - Für qualitative Usability-Studien nennt Nielsen **5 Nutzer** als Regel mit Ausnahmen. Das ist für uns nur als Empfehlung in Berichten relevant („für echte Tests mit Nutzern“).
@@ -89,7 +111,8 @@ Ebenfalls geladen, aber **nicht ausgewertet:** NN „Recognition and Recall“, 
 
 | Aussage / Frage | Stand |
 |---|---|
-| **Joy of Use** als bewertbare Dimension | Keine Primärquelle gelesen. Unsere Zusammenstellung (Kontrollgefühl, Rückmeldung, Reibung, Konzentration, Souveränität) leitet sich aus den Heuristiken 1, 3, 7, 8 ab, ist aber **eigene Konstruktion**, unvalidiert. |
+| **Joy of Use** als bewertbare Dimension | Keine Primärquelle, die Freude messbar macht. Gelesen wurde nur NN-AU, das eher **warnt** (Gefallen kann Probleme verdecken). Unsere Zusammenstellung (Kontrollgefühl, Rückmeldung, Reibung, Konzentration, Souveränität) leitet sich aus den Heuristiken 1, 3, 7, 8 ab, ist aber **eigene Konstruktion**, unvalidiert. Streichung empfohlen (D-023). Literatur zu hedonischer Qualität und Flow ist **nicht gelesen**. |
+| Gestaltpsychologie im Original (Wertheimer u. a.), Prinzipien Geschlossenheit, Kontinuität, Figur und Grund, Prägnanz, gemeinsames Schicksal | **Nicht gelesen.** Die NN/g-Artikel zu diesen Prinzipien waren unter den geprüften Adressen nicht auffindbar. Übernommen sind nur Nähe, Ähnlichkeit, gemeinsame Region und visuelle Hierarchie. |
 | **Germane Load** (förderliche Last) | In NN-CL nicht enthalten. Nicht übernommen, bis Sweller-Primärliteratur geprüft ist. |
 | Feste Schwellen („≤ 4 Elemente im Arbeitsgedächtnis“, „5–7 am Limit“) | **Nicht belegt** (Cowan, Miller nicht gelesen). Werden nicht als Regel verwendet. |
 | Zuverlässigkeit von LLM-Bewertungen, Skalenanker | Keine Quelle; durch **eigene Messung** zu klären (D-011). Die Aussage von NN-SEV zu Einzelbewertungen ist ein starkes Argument für Mehrfachläufe. |
