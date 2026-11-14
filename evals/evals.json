@@ -1,0 +1,40 @@
+{
+  "skill_name": "editorial-ux-skill",
+  "evals": [
+    {
+      "id": 1,
+      "name": "critique-wp-event-metabox",
+      "prompt": "Please review the meta box in evals/fixtures/wp-event-metabox/event-fields.php. Editors (two part-time staff, desktop) use it to enter a new event and publish it. Tell me what is wrong from the editors' point of view and what to fix first.",
+      "expected_output": "A structured critique per dimension with evidence levels, severities, blockers marked, and specific small recommendations. States that it could not render the interface.",
+      "files": ["evals/fixtures/wp-event-metabox/event-fields.php"],
+      "assertions": [
+        "The report finds that placeholders are used instead of labels",
+        "The report finds that required fields are not marked and that saving silently skips them without any message",
+        "The report finds that the 20+ fields are not grouped",
+        "The report finds that the price error is shown only by color",
+        "Each finding carries an evidence level (Observed, Hypothesis or Assumption)",
+        "The report states that the UI was not rendered and treats perception findings as Hypotheses",
+        "The report does not claim measured contrast ratios or target sizes",
+        "The report does not call the nonce or capability check in the save handler missing",
+        "No overall single score hides blocker dimensions"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "design-wp-event-fields",
+      "prompt": "I build WordPress sites. For an 'Event' post type my editors need to enter title, start and end date, location with address and map link, indoor or outdoor, capacity, price, a featured flag, an image, up to five links, contact data, internal notes and SEO fields. Two part-time editors, desktop. Plan how this interface should be structured for them. Do not write code.",
+      "expected_output": "A design brief: tasks, field inventory, grouping and order, wireframe, labels and help text in editor language, conditional display and defaults, states and error messages, host constraints, open questions.",
+      "files": [],
+      "assertions": [
+        "Fields are grouped by editor task (for example when and where, price, media, contact, extras) and ordered by work sequence",
+        "Rarely used fields (internal notes, SEO) are placed behind progressive disclosure",
+        "Labels are written in editor language and help text is provided where needed",
+        "Required fields are marked and validation messages say what is wrong and how to fix it",
+        "The brief uses the host's own components and does not propose overriding core styles",
+        "WordPress-specific statements are marked as Assumptions or not verified against current documentation",
+        "The report contains no code and changes no files",
+        "Open questions or assumptions about the editors are stated, not invented"
+      ]
+    }
+  ]
+}

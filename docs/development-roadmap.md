@@ -38,9 +38,11 @@ Prinzip: **vertikaler Schnitt zuerst.** Erst wenn eine kleine Fähigkeit messbar
 
 ### Hinweis zum geplanten WordPress-Test
 
-Ein Test mit einem hypothetischen WordPress-Backend setzt voraus, dass es **einen lauffähigen Skill gibt**. Der erste Stand entsteht in Phase 2 (Schritt 4 und 5: `SKILL.md` und `critique`). Bis dahin existiert nur die Dokumentation. Der Test sollte mit dem Baseline-Vergleich aus Phase 2 verzahnt werden: dieselbe Aufgabe mit und ohne Skill, protokolliert nach dem Format aus `project-plan.md` Kap. 10.
+Seit Alpha 0.1 gibt es einen testbaren Skill (`critique`, `design` Konzeptstufe). Der Test mit einem hypothetischen WordPress-Backend sollte mit dem Baseline-Vergleich verzahnt werden: dieselbe Aufgabe mit und ohne Skill, protokolliert nach `evals/README.md` und dem Format aus `project-plan.md` Kap. 10. Ein absichtlich schlechtes Beispiel mit versteckter Lösungsliste liegt unter `evals/`.
 
 ## Phase 2 – Vertikaler Schnitt (Alpha 0.1)
+
+**Stand 2026-11-14: Alpha 0.1 ist testbar.** Erledigt: Schritt 1 (Layout), 2 (Strukturtest `tests/structural/check_skill.py`, plus optional offizielles `skills-ref validate`), 3 (Methodikreferenz), 4 (`SKILL.md`), 5 (`critique`, zusätzlich `design` Konzeptstufe und WordPress-Hinweise), ein Beispiel (Testprojekt: WordPress-Meta-Box) mit Lösungsliste und ein informeller Rauchtest. **Offen:** Baseline ohne Skill und Vergleichsmessung (Schritt 5 und 7 der Tabelle), Aktivierungs-Eval (6), Kalibrierung der Skala (8), Cursor-Praxistest (9).
 
 Reihenfolge (jeder Schritt ist einzeln prüfbar):
 

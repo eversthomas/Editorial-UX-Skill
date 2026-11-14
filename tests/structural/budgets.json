@@ -1,0 +1,19 @@
+{
+  "_doc": "Byte budgets for files in skills/editorial-ux-skill (D-008). Initial values are the Alpha 0.1 sizes plus about 25 percent headroom. Raise a limit only deliberately and note the reason in docs/decisions.md.",
+  "files": {
+    "SKILL.md": 6600,
+    "references/methodology.md": 10400,
+    "references/cmd-critique.md": 3000,
+    "references/cmd-design.md": 3700,
+    "references/wordpress.md": 5200,
+    "assets/templates/ux-critique.md": 1700,
+    "assets/templates/design-brief.md": 1400
+  },
+  "command_limit_bytes": 24000,
+  "commands": {
+    "critique": ["references/cmd-critique.md", "references/methodology.md", "assets/templates/ux-critique.md"],
+    "critique+wordpress": ["references/cmd-critique.md", "references/methodology.md", "assets/templates/ux-critique.md", "references/wordpress.md"],
+    "design": ["references/cmd-design.md", "references/methodology.md", "assets/templates/design-brief.md"],
+    "design+wordpress": ["references/cmd-design.md", "references/methodology.md", "assets/templates/design-brief.md", "references/wordpress.md"]
+  }
+}

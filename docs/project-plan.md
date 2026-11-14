@@ -8,7 +8,7 @@ Projektziel: Entwicklung eines universellen, eigenständigen Open-Source-Skills 
 
 | | |
 |---|---|
-| Stand | **Phase 1 abgeschlossen (2026-11-14).** Phase 2 nicht begonnen; es gibt noch keinen lauffähigen Skill. |
+| Stand | **Phase 1 abgeschlossen (2026-11-14). Alpha 0.1 testbar** (`critique`, `design` Konzeptstufe); Wirksamkeit noch nicht gemessen (D-028). |
 | Name des Skills | `editorial-ux-skill` (identisch mit dem Repository-Namen) |
 | Repository | `editorial-ux-skill` |
 | Befehlspräfix | `/editorial-ux-skill <befehl>` |

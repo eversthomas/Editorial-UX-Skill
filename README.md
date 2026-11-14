@@ -8,7 +8,14 @@ Ein Backend ist nicht nur eine technische Verwaltungsoberfläche. Es ist ein Arb
 
 ## Status
 
-**Phase 1 (Recherche und Konzeption) ist abgeschlossen. Es gibt noch keinen lauffähigen Skill.** Als Nächstes folgt Phase 2: ein erster vertikaler Schnitt mit `SKILL.md`, dem Befehl `critique` und einer Vergleichsmessung mit und ohne Skill. Details: [Roadmap](docs/development-roadmap.md).
+**Alpha 0.1: testbar, noch nicht gemessen.** Phase 1 (Recherche und Konzeption) ist abgeschlossen. Der Skill enthält die Befehle `critique` und `design` (Konzeptstufe) sowie WordPress-Hinweise (Meta-Boxen, Block-Editor), die bisher aus Modellwissen stammen und als Annahme gekennzeichnet sind. Es gibt einen ersten informellen Rauchtest ([Ergebnis](evals/results/2026-11-14-smoke-critique.md)), aber noch keine Vergleichsmessung mit und ohne Skill. Details: [Roadmap](docs/development-roadmap.md).
+
+### Ausprobieren
+
+1. Ordner `skills/editorial-ux-skill` nach `.claude/skills/editorial-ux-skill/` in Ihrem Projekt kopieren (Claude Code und Cursor lesen diesen Ordner, laut offizieller Dokumentation). Der Ordnername muss genau so lauten.
+2. Neue Sitzung starten und zum Beispiel fragen: „Prüfe diese Meta-Box aus Sicht der Redakteure“ oder „Plane die Felder für einen Event-Inhaltstyp“.
+3. Zum Testen gibt es ein absichtlich schlechtes Beispiel und eine Anleitung für den Vergleich mit und ohne Skill: [evals/README.md](evals/README.md).
+4. Struktur prüfen: `python3 tests/structural/check_skill.py`.
 
 ## Einsatzszenarien
 
@@ -29,12 +36,12 @@ Befehle folgen dem Muster `/editorial-ux-skill <befehl>`. Sie sollen auch einzel
 
 | Befehl | Zweck | Geplant ab |
 |---|---|---|
-| `critique` | Bestehende UX nach den Dimensionen A bis I bewerten | Alpha 0.1 |
+| `critique` | Bestehende UX nach den Dimensionen A bis I bewerten | **Alpha 0.1, verfügbar** |
+| `design` | Lösung konzipieren (Struktur, Felder, Beschriftung, Zustände, Wireframe); ohne Code | **Alpha 0.1, verfügbar (Konzeptstufe)** |
 | `discover` | System und redaktionelle Arbeitsrealität untersuchen | Alpha 0.2 |
 | `audit` | Prüfbare Qualitätskriterien abarbeiten (z. B. Barrierefreiheit) | Alpha 0.2 |
 | `improve` | Kleinen Verbesserungszyklus durchführen | Alpha 0.3 |
 | `walkthrough` | Aufgaben als simulierten Durchgang prüfen | Beta |
-| `design` | Lösung konzipieren und visuell gestalten | Beta |
 | `implement` | Freigegebene Gestaltung umsetzen | Beta |
 | `document` | Ergebnisse und Entscheidungen dokumentieren | Beta |
 

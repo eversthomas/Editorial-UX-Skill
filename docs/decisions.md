@@ -39,6 +39,7 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 | D-025 | Erster spezifischer Adapter: WordPress (Meta-Boxen, Block-Editor); ProcessWire nachrangig | Akzeptiert |
 | D-026 | WordPress-Adapter zunächst aus Modellwissen, als Annahme gekennzeichnet; Quellenrecherche zurückgestellt | Akzeptiert |
 | D-027 | Phase 1 abgeschlossen; Übergabe offener Punkte | Akzeptiert |
+| D-028 | Alpha-0.1-Umfang: `critique` und `design` (Konzeptstufe) | Übernommen (Phase 2) |
 
 ---
 
@@ -210,3 +211,9 @@ In beiden Fällen ist **alles visuell gestaltbar**: Entwurf und Umsetzung (Marku
 
 **Entscheidung (Projektverantwortlicher, 2026-11-14):** Phase 1 wird abgeschlossen. Offene Punkte stehen in `development-roadmap.md` (Abschnitt „Mit Phase 1 mitgenommene offene Punkte“).
 **Hinweis:** Vor dem Praxistest mit einem WordPress-Backend muss ein lauffähiger Skill existieren (Phase 2, Schritt 4 und 5).
+
+## D-028 – Alpha-0.1-Umfang: `critique` und `design` (Konzeptstufe)
+
+**Stand (2026-11-14):** Der testbare Skill enthält `critique` und `design` als Konzeptstufe (Brief und Wireframe, kein Code) sowie `references/wordpress.md` als Annahmen aus Modellwissen (D-026). Damit weicht Alpha 0.1 vom ursprünglichen Plan (nur `critique`) ab: `design` kam hinzu, weil der Hauptanwendungsfall (Felder für Redakteure gestalten) sonst nicht testbar wäre.
+**Prüfung:** Strukturtest und ein informeller Rauchtest (`evals/results/2026-11-14-smoke-critique.md`, 16 von 17 eingebauten Problemen gefunden, ohne Messung und ohne Baseline). Die Wirksamkeit gegenüber ohne Skill ist **nicht belegt**; das ist der Entscheidungspunkt am Ende von Phase 2.
+**Änderungen aus dem Rauchtest:** Zusammenfassung am Berichtsanfang, eine Evidenzstufe je Befund, klarere Abgrenzung der Scores 0 und 1, „nicht bewertbar“ für A und H bei Einzelkomponenten, Abschnitt für Beobachtungen außerhalb des UX-Umfangs.
