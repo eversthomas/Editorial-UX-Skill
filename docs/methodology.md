@@ -1,6 +1,6 @@
 # Editorial UX Methodik (Entwurf)
 
-Status: **Entwurf zur Freigabe.** Er konkretisiert `project-plan.md` Kap. 6 anhand der Primärquellen in `research/methodology-sources.md`. Jedes Element trägt eine Herkunftsmarke:
+Status: **Entwurf; mit dem Abschluss von Phase 1 übernommen (2026-11-14), Kalibrierung und Praxisprüfung in Phase 2.** Er konkretisiert `project-plan.md` Kap. 6 anhand der Primärquellen in `research/methodology-sources.md`. Jedes Element trägt eine Herkunftsmarke:
 
 - **[Quelle]**: aus einer gelesenen Primärquelle abgeleitet (Kürzel siehe dort).
 - **[Eigenentwurf]**: unsere Konstruktion, **unvalidiert**, wird in Phase 2 und 3 kalibriert und gemessen.

@@ -1,6 +1,10 @@
-# Architektur (Vorschlag nach Phase-1-Recherche)
+# Architektur (Stand nach Phase 1)
 
-Status: **Vorschlag zur Freigabe.** Er ergänzt `project-plan.md` Kap. 3–5 und 9. Grundlage sind `research/impeccable-analysis.md` und `research/agent-skills-compatibility.md`. Einzelne Entscheidungen stehen mit Begründung in `decisions.md`.
+Status: **mit dem Abschluss von Phase 1 übernommen (2026-11-14), Praxisprüfung in Phase 2.** Er ergänzt `project-plan.md` Kap. 3–5 und 9. Grundlage sind `research/impeccable-analysis.md` und `research/agent-skills-compatibility.md`. Einzelne Entscheidungen stehen mit Begründung in `decisions.md`.
+
+## 0. Einsatzszenarien (D-024)
+
+Die Architektur trägt zwei Szenarien: (1) **eingebettete Redaktionsoberflächen in einem Host-CMS**, Hauptfall WordPress mit Meta-Boxen und Block-Editor, und (2) **vollständige, CMS-unabhängige Backends**. Beides ist visuell gestaltbar (Entwurf und Umsetzung). Im Host-CMS gilt dessen Designsystem mit Erweiterung nur über offizielle Erweiterungspunkte. Dazu gibt es einen generischen Adapter (`platforms/custom-backends.md`) und einen begrenzten WordPress-Adapter (`platforms/wordpress.md`, nur Meta-Boxen und Block-Editor); ProcessWire ist nachrangig (D-025).
 
 ## 1. Leitlinie
 

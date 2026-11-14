@@ -4,25 +4,41 @@ Konkrete Implementierungsreihenfolge, abgeleitet aus `project-plan.md` Kap. 12 u
 
 Prinzip: **vertikaler Schnitt zuerst.** Erst wenn eine kleine Fähigkeit messbar besser ist als dieselbe Aufgabe ohne Skill, wird erweitert.
 
-## Phase 1 – Fundament (Stand)
+## Phase 1 – Fundament (abgeschlossen am 2026-11-14)
 
 | Aufgabe | Stand |
 |---|---|
-| Impeccable untersuchen, Lizenz klären | **erledigt** (`research/impeccable-analysis.md`) |
-| Agent Skills Spec recherchieren | **erledigt**, mit Lücken (`research/agent-skills-compatibility.md`) |
-| Architektur prüfen und anpassen | **Vorschlag** (`architecture.md`, `decisions.md`) |
+| Impeccable untersuchen, Lizenz klären | **erledigt** (`research/impeccable-analysis.md`; Apache-2.0, nichts übernommen) |
+| Agent Skills Spec recherchieren | **erledigt** (`research/agent-skills-compatibility.md`) |
+| Cursor- und Claude-Code-Skills und Plugins | **erledigt**, Primärquellen (`research/cursor-compatibility.md`) |
+| Architektur prüfen und anpassen | **erledigt** (`architecture.md`, `decisions.md`) |
 | Implementierungsreihenfolge | dieses Dokument |
-| Nielsen-Heuristiken, Cognitive-Load-Methoden aus Primärquellen einordnen | **erledigt** (`research/methodology-sources.md`) |
+| Nielsen-Heuristiken, Cognitive Load, WCAG, Walkthrough, Gestaltprinzipien aus Primärquellen | **erledigt** (`research/methodology-sources.md`) |
 | Editorial UX von allgemeinem UI-Design abgrenzen | **erledigt** (`research/impeccable-analysis.md`, 3.4 und 6) |
-| Bestehende CMS- und Admin-UX-Patterns untersuchen | **offen** |
-| `docs/methodology.md` | **Entwurf** zur Freigabe (Dimensionen, Evidenz, Schweregrad, Deckelungsregel, Walkthrough) |
+| Bewertungsmethodik entwerfen | **erledigt als Entwurf** (`methodology.md`); Kalibrierung in Phase 2 |
+| Einsatzszenarien und Adapter-Zuschnitt festlegen | **erledigt** (D-024, D-025) |
+| Bestehende CMS- und Admin-UX-Patterns untersuchen, WordPress-Adapter | **bewusst zurückgestellt** (D-026) |
 
-### Vor Abschluss von Phase 1 zu klären
+### Ergebnisse (Dokumente)
 
-1. **Entscheidungen freigeben:** D-002, D-003, D-004, D-005, D-007, D-008, D-009, D-015.
-2. **Claude-Code-Dokumentation lesen:** erledigt für Skills (`research/cursor-compatibility.md`); Plugin-Seiten offen. **Cursor-Doku (Skills, Plugins) und Claude-Code-Plugin-Seiten:** erledigt, siehe `research/cursor-compatibility.md`.
-3. **Repository umbenennen** (D-002): Aktion des Inhabers.
-4. **Primärquellen-Recherche** für die Methodik: NN/g-Heuristiken, WCAG 2.2, Cognitive Walkthrough, Cognitive-Load-Literatur; Nachweis je Aussage.
+`docs/project-plan.md` (Version 3), `docs/architecture.md`, `docs/methodology.md`, `docs/decisions.md` (D-001 bis D-026), `docs/development-roadmap.md`, `docs/research/` mit `impeccable-analysis.md`, `agent-skills-compatibility.md`, `cursor-compatibility.md`, `methodology-sources.md`.
+
+### Mit Phase 1 mitgenommene offene Punkte
+
+| Punkt | Wo geklärt | Verantwortlich |
+|---|---|---|
+| Repository in Kleinschreibung umbenennen (D-002), nicht blockierend | jederzeit | Projektverantwortlicher |
+| Skalenbreite 0–5 oder 0–4 (D-011), Deckelungsregel | Phase 2, Kalibrierlauf | Claude, mit Messung |
+| Profil-Persistenz (D-012), isolierte Mehrfachläufe (D-013) | Phase 3 | Claude, mit Messung |
+| Praxistest in Cursor (Fund unter `.claude/skills/`, Text hinter `/editorial-ux-skill`, `license`-Feld) | Ende Phase 2 | Projektverantwortlicher oder Claude |
+| WordPress-Adapter (Meta-Boxen, Block-Editor): Quellenprüfung, falls Modellwissen nicht genügt (D-026) | nach dem Praxistest | beide |
+| CMS- und Admin-UX-Patterns, ARIA-Muster, WCAG-Prüfbarkeitstabelle, EN 301 549 | Phase 2 und 4 | Claude |
+| Claude-Code-Plugin-Review-Kriterien, gemeinsames Plugin-Manifest | Beta | Claude |
+| Wirkungsvergleiche zu Impeccable (mit/ohne Skill) | optional | Claude |
+
+### Hinweis zum geplanten WordPress-Test
+
+Ein Test mit einem hypothetischen WordPress-Backend setzt voraus, dass es **einen lauffähigen Skill gibt**. Der erste Stand entsteht in Phase 2 (Schritt 4 und 5: `SKILL.md` und `critique`). Bis dahin existiert nur die Dokumentation. Der Test sollte mit dem Baseline-Vergleich aus Phase 2 verzahnt werden: dieselbe Aufgabe mit und ohne Skill, protokolliert nach dem Format aus `project-plan.md` Kap. 10.
 
 ## Phase 2 – Vertikaler Schnitt (Alpha 0.1)
 

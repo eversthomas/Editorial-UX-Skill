@@ -8,6 +8,7 @@ Projektziel: Entwicklung eines universellen, eigenständigen Open-Source-Skills 
 
 | | |
 |---|---|
+| Stand | **Phase 1 abgeschlossen (2026-11-14).** Phase 2 nicht begonnen; es gibt noch keinen lauffähigen Skill. |
 | Name des Skills | `editorial-ux-skill` (identisch mit dem Repository-Namen) |
 | Repository | `editorial-ux-skill` |
 | Befehlspräfix | `/editorial-ux-skill <befehl>` |
@@ -524,7 +525,7 @@ Jeder Adapter beschreibt:
 
 Die Adapter sind optional. Unbekannte Systeme müssen ebenfalls analysierbar sein. Dafür gibt es den generischen Adapter `custom-backends.md`, der **zuerst** entsteht.
 
-**Umfang (D-025):** Das Projekt liefert zunächst den generischen Adapter und **einen** spezifischen Adapter: **WordPress, begrenzt auf Meta-Boxen und Block-Editor** (nicht die gesamte Admin-Oberfläche). **ProcessWire** folgt nachrangig. Alle weiteren (Drupal, Headless-CMS, Frameworks) werden Community-Beiträge nach einer Adapter-Vorlage und festgelegten Qualitätskriterien. Das begrenzt den Pflegeaufwand und verhindert veraltetes Halbwissen. Der WordPress-Adapter beschreibt, wie man dort Oberflächen für Redakteure schafft (Erweiterungspunkte, Komponentenbibliothek des Block-Editors, Berechtigungen, Barrierefreiheit), nicht, wie man Kernfunktionen ändert.
+**Umfang (D-025):** Das Projekt liefert zunächst den generischen Adapter und **einen** spezifischen Adapter: **WordPress, begrenzt auf Meta-Boxen und Block-Editor** (nicht die gesamte Admin-Oberfläche). **ProcessWire** folgt nachrangig. Alle weiteren (Drupal, Headless-CMS, Frameworks) werden Community-Beiträge nach einer Adapter-Vorlage und festgelegten Qualitätskriterien. Das begrenzt den Pflegeaufwand und verhindert veraltetes Halbwissen. Der WordPress-Adapter beschreibt, wie man dort Oberflächen für Redakteure schafft (Erweiterungspunkte, Komponentenbibliothek des Block-Editors, Berechtigungen, Barrierefreiheit), nicht, wie man Kernfunktionen ändert. **Quellenlage (D-026):** Der Adapter wird zunächst aus allgemeinem Modellwissen entworfen. Aussagen daraus tragen die Evidenzstufe **Annahme**, bis sie gegen die aktuelle offizielle Dokumentation geprüft sind; ein Praxistest mit einem lokalen WordPress-Backend soll zeigen, ob das genügt.
 
 Wichtig: Plattformdokumentationen müssen als veränderliche Referenzen behandelt werden. Der Agent soll bei konkreten Implementierungen die jeweils aktuelle offizielle Dokumentation prüfen, anstatt veraltete API-Annahmen zu übernehmen.
 
@@ -750,7 +751,7 @@ Die Phasen sind so geschnitten, dass früh ein **vertikaler Schnitt** entsteht: 
 
 Ziel: Eine belastbare fachliche Grundlage schaffen.
 
-**Stand:** Aufgaben 1, 2, 3, 5 (Nielsen, Cognitive Load, WCAG aus Primärquellen: `research/methodology-sources.md`), 8 und 9 (Entwurf in `methodology.md`, Skalenbreite D-011 offen) sind erledigt. Aufgabe 4 (Prinzipien) ist in `methodology.md` teilweise enthalten, Aufgabe 6 (Abgrenzung) in `research/impeccable-analysis.md`. **Offen:** Aufgabe 7 (CMS- und Admin-UX-Patterns, Plattformwissen); sie braucht Quellen je Plattform.
+**Stand: abgeschlossen am 2026-11-14.** Aufgaben 1 bis 6, 8 und 9 sind erledigt (Ergebnisse: `docs/research/*`, `docs/architecture.md`, `docs/methodology.md`, `docs/decisions.md`, `docs/development-roadmap.md`). **Aufgabe 7 (CMS- und Admin-UX-Patterns, Plattformwissen) wurde bewusst zurückgestellt:** Der WordPress-Adapter (Meta-Boxen, Block-Editor) wird zunächst aus allgemeinem Modellwissen entworfen und als **Annahme** gekennzeichnet; ein Praxistest soll zeigen, ob das genügt (D-026). Methodik-Entwurf und Skalenbreite (D-011) werden in Phase 2 kalibriert.
 
 Aufgaben:
 
@@ -927,7 +928,7 @@ Editorial UX Skill 1.0 gilt als fertig, wenn:
 
 ## 15. Arbeitsauftrag für Claude Code
 
-Claude Code soll das Projekt nicht unmittelbar vollständig implementieren. Zunächst ist eine eigenständige Recherche- und Konzeptionsphase durchzuführen (Phase 1).
+Claude Code soll das Projekt nicht unmittelbar vollständig implementieren. Zunächst ist eine eigenständige Recherche- und Konzeptionsphase durchzuführen (Phase 1). **Stand: Phase 1 ist abgeschlossen**; alle unten genannten Dokumente liegen vor, offene Punkte stehen in `docs/development-roadmap.md`.
 
 ### Arbeitsmodus
 

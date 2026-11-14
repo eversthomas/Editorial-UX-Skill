@@ -2,39 +2,43 @@
 
 Jede wesentliche Architekturentscheidung mit Begründung. Status:
 
-- **Akzeptiert:** Aus dem Projektplan oder einer Nutzerentscheidung übernommen, oder durch Recherche belegt.
-- **Vorschlag:** Aus der Recherche abgeleitet; braucht Freigabe durch den Projektverantwortlichen.
+- **Akzeptiert:** Aus dem Projektplan oder einer Nutzerentscheidung übernommen, oder durch Recherche belegt. Der Projektverantwortliche hat die Empfehlungen zu D-002 bis D-005, D-007 bis D-009 und D-015 ausdrücklich übernommen (2026-11-14).
+- **Übernommen (Phase 1):** Von Claude vorgeschlagen und mit dem Abschluss von Phase 1 **vorläufig** übernommen, ohne dass jede Entscheidung einzeln bestätigt wurde. Die Prüfung erfolgt in Phase 2 (Praxistest, Kalibrierung). Der Projektverantwortliche kann jede dieser Entscheidungen jederzeit ändern.
 - **Offen:** Noch nicht entscheidbar; benennt, was dafür fehlt.
+
+**Maßgeblich ist die Tabelle.** Im Text der einzelnen Entscheidungen steht teils noch „Vorschlag“ als historische Formulierung.
 
 Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht überschrieben.
 
 | ID | Thema | Status |
 |---|---|---|
 | D-001 | Skill-Name entspricht dem Repository-Namen | Akzeptiert |
-| D-002 | Repository und Skill-Ordner in Kleinschreibung | Vorschlag |
-| D-003 | Skill-Nutzlast in `skills/editorial-ux-skill/` | Vorschlag |
-| D-004 | Ein Skill, Befehle als Argumente, Anleitungen unter `references/` | Vorschlag |
-| D-005 | Nur Spec-Felder im Frontmatter der Quelle | Vorschlag |
+| D-002 | Repository und Skill-Ordner in Kleinschreibung | Akzeptiert (Umbenennung steht aus) |
+| D-003 | Skill-Nutzlast in `skills/editorial-ux-skill/` | Akzeptiert |
+| D-004 | Ein Skill, Befehle als Argumente, Anleitungen unter `references/` | Akzeptiert |
+| D-005 | Nur Spec-Felder im Frontmatter der Quelle | Akzeptiert |
 | D-006 | Lizenz MIT; kein Impeccable-Inhalt; Herkunft je Referenz | Akzeptiert |
-| D-007 | Evals im Spec-Format plus Aktivierungs-Eval | Vorschlag |
-| D-008 | Größenbudgets im Strukturtest | Vorschlag |
-| D-009 | Evidenzkennzeichnung und Eingeschränkt-Hinweis in `SKILL.md` | Vorschlag |
+| D-007 | Evals im Spec-Format plus Aktivierungs-Eval | Akzeptiert |
+| D-008 | Größenbudgets im Strukturtest | Akzeptiert |
+| D-009 | Evidenzkennzeichnung und Eingeschränkt-Hinweis in `SKILL.md` | Akzeptiert |
 | D-010 | Keine Laufzeit und kein Detektor im Kern | Akzeptiert |
 | D-011 | Skalenbreite 0–5 oder 0–4 | Offen |
 | D-012 | Persistenz von Profilen im Nutzerprojekt | Offen |
 | D-013 | Isolierte Sub-Agent-Bewertung | Offen (zurückgestellt) |
 | D-014 | Sprache der Skill-Inhalte: Englisch | Akzeptiert |
-| D-015 | Verweistiefe eins; Ladetabelle in `SKILL.md` | Vorschlag |
-| D-016 | Cursor als gleichrangige Zielumgebung; eine gemeinsame Installation | Vorschlag |
-| D-017 | Keine Argument-Platzhalter; Befehl aus dem Anfragetext ableiten | Vorschlag |
-| D-018 | Verteilung: Ordnerinstallation ab Alpha, Plugin/Marketplace ab Beta | Vorschlag |
-| D-019 | Schweregrad nach Nielsen (0–4) statt P0–P3; zwei Phasen | Vorschlag |
-| D-020 | Accessibility: WCAG 2.2 Stufe AA, Prüfbarkeitsklassen | Vorschlag |
-| D-021 | Zitierweise: eigene Formulierung, Quelle und URL, kein Abdruck | Vorschlag |
-| D-022 | Gestaltprinzipien als Wahrnehmungsprüfung (A, C, E, H; Walkthrough Frage 2 und 3) | Vorschlag |
+| D-015 | Verweistiefe eins; Ladetabelle in `SKILL.md` | Akzeptiert |
+| D-016 | Cursor als gleichrangige Zielumgebung; eine gemeinsame Installation | Übernommen (Phase 1) |
+| D-017 | Keine Argument-Platzhalter; Befehl aus dem Anfragetext ableiten | Übernommen (Phase 1) |
+| D-018 | Verteilung: Ordnerinstallation ab Alpha, Plugin/Marketplace ab Beta | Übernommen (Phase 1) |
+| D-019 | Schweregrad nach Nielsen (0–4) statt P0–P3; zwei Phasen | Übernommen (Phase 1) |
+| D-020 | Accessibility: WCAG 2.2 Stufe AA, Prüfbarkeitsklassen | Übernommen (Phase 1) |
+| D-021 | Zitierweise: eigene Formulierung, Quelle und URL, kein Abdruck | Übernommen (Phase 1) |
+| D-022 | Gestaltprinzipien als Wahrnehmungsprüfung (A, C, E, H; Walkthrough Frage 2 und 3) | Übernommen (Phase 1) |
 | D-023 | Joy of Use als Dimension gestrichen | Akzeptiert |
 | D-024 | Zwei Einsatzszenarien; alles visuell gestaltbar | Akzeptiert |
 | D-025 | Erster spezifischer Adapter: WordPress (Meta-Boxen, Block-Editor); ProcessWire nachrangig | Akzeptiert |
+| D-026 | WordPress-Adapter zunächst aus Modellwissen, als Annahme gekennzeichnet; Quellenrecherche zurückgestellt | Akzeptiert |
+| D-027 | Phase 1 abgeschlossen; Übergabe offener Punkte | Akzeptiert |
 
 ---
 
@@ -192,3 +196,17 @@ In beiden Fällen ist **alles visuell gestaltbar**: Entwurf und Umsetzung (Marku
 **Begründung:** Der Hauptfall des Projektverantwortlichen sind spezialisierte WordPress-Sites mit individuellen Feldern. Ein begrenzter Adapter ist wartbar und veraltet langsamer.
 **Folge:** Quellen für den Adapter sind die offizielle WordPress-Entwicklerdokumentation zu Meta-Boxen und Block-Editor. Der Abruf ist noch nicht erfolgt (Hostfreigabe im Freigabedialog abgelehnt, Stand 2026-11-14).
 **Ersetzt:** den Vorschlag in Plan Version 2 (zuerst ProcessWire als „gut bekannte Plattform“; das war eine Annahme).
+
+## D-026 – WordPress-Adapter zunächst aus Modellwissen, als Annahme gekennzeichnet
+
+**Entscheidung (Projektverantwortlicher, 2026-11-14):** Die Quellenrecherche zu WordPress (Meta-Boxen, Block-Editor) wird zurückgestellt. Der Projektverantwortliche vermutet, dass das allgemeine Wissen des Modells über WordPress für den Anfang genügt, und testet das praktisch mit einem hypothetischen Backend auf seinem Rechner.
+**Folgen:**
+- Aussagen zu WordPress, die im Skill oder in Referenzen stehen und nicht aus der offiziellen Doku belegt sind, tragen die Evidenzstufe **Annahme** und den Hinweis „aus Modellwissen, nicht gegen die aktuelle Doku geprüft“.
+- Bei konkreter Implementierung gilt weiter Plan Kap. 7 und 9.4 Punkt 5: Plattformdokumentation ist veränderlich, der Agent prüft die aktuelle offizielle Dokumentation, soweit verfügbar, statt veraltete API-Annahmen zu übernehmen.
+- Nach dem Praxistest entscheidet sich, ob eine gezielte Quellenprüfung nötig ist (Hostfreigabe für `developer.wordpress.org` liegt dann neu vor).
+- **Risiko:** WordPress-APIs und Block-Editor-Komponenten ändern sich schnell; Modellwissen kann veraltet sein. Der Praxistest soll das sichtbar machen, nicht verdecken.
+
+## D-027 – Phase 1 abgeschlossen; Übergabe offener Punkte
+
+**Entscheidung (Projektverantwortlicher, 2026-11-14):** Phase 1 wird abgeschlossen. Offene Punkte stehen in `development-roadmap.md` (Abschnitt „Mit Phase 1 mitgenommene offene Punkte“).
+**Hinweis:** Vor dem Praxistest mit einem WordPress-Backend muss ein lauffähiger Skill existieren (Phase 2, Schritt 4 und 5).
