@@ -30,11 +30,11 @@ In beiden Fällen ist alles visuell gestaltbar: Entwurf und Umsetzung (Markup, S
 2. **Design for the User:** Die tatsächliche Arbeitsrealität der Benutzer bestimmt die Gestaltung.
 3. **Good Work is the Measure:** Effizienz, Verständlichkeit, Barrierefreiheit und Kontrolle über die eigene Arbeit sind gleichwertig. Gerne arbeiten zeigt sich an Kontrolle, Ruhe und Souveränität.
 
-## Geplante Befehle
+## Befehle
 
 Befehle folgen dem Muster `/editorial-ux-skill <befehl>`. Sie sollen auch einzeln nutzbar sein und werden aus dem Text der Anfrage abgeleitet (keine Platzhalter, damit derselbe Skill in mehreren Agenten läuft).
 
-| Befehl | Zweck | Geplant ab |
+| Befehl | Zweck | Stand |
 |---|---|---|
 | `critique` | Bestehende UX nach den Dimensionen A bis I bewerten | **Alpha 0.1, verfügbar** |
 | `design` | Lösung konzipieren (Struktur, Felder, Beschriftung, Zustände, Wireframe); ohne Code | **Alpha 0.1, verfügbar (Konzeptstufe)** |
@@ -72,8 +72,9 @@ Dies ist ein **Entwurf**; Skalen und Regeln werden in Phase 2 gemessen und kalib
 | [Projektplan](docs/project-plan.md) | Vision, Geltungsbereich, Architektur, Methodik, Phasen, Definition of Done |
 | [Architektur](docs/architecture.md) | Layout, Lademodell, Qualitätssicherung, Modularisierungsprüfung |
 | [Methodik](docs/methodology.md) | Dimensionen, Evidenzstufen, Schweregrad, Scoring, Walkthrough (Entwurf) |
-| [Entscheidungen](docs/decisions.md) | D-001 bis D-027 mit Begründung und Status |
+| [Entscheidungen](docs/decisions.md) | D-001 bis D-028 mit Begründung und Status |
 | [Roadmap](docs/development-roadmap.md) | Umsetzungsreihenfolge, offene Punkte, Risiken |
+| [Evals und Testanleitung](evals/README.md) | Testbeispiel mit versteckter Lösungsliste, Vergleich mit/ohne Skill, [Rauchtest](evals/results/2026-11-14-smoke-critique.md) |
 | [Recherche: Impeccable](docs/research/impeccable-analysis.md) | Architektur und Lizenz des Referenzprojekts |
 | [Recherche: Agent Skills](docs/research/agent-skills-compatibility.md) | Spezifikation und Folgen |
 | [Recherche: Cursor und Claude Code](docs/research/cursor-compatibility.md) | Installation, Frontmatter, Plugins |
@@ -82,7 +83,7 @@ Dies ist ein **Entwurf**; Skalen und Regeln werden in Phase 2 gemessen und kalib
 ## Entwicklungsphasen
 
 1. Grundlagen und Recherche: **abgeschlossen**
-2. Vertikaler Schnitt (`critique`, Testprojekt, Vergleich mit/ohne Skill)
+2. Vertikaler Schnitt (`critique`, `design`, Testbeispiel, Vergleich mit/ohne Skill): **läuft**, Alpha 0.1 testbar, Messung steht aus
 3. Engine (`discover`, `audit`, Mehrfachläufe)
 4. Plattformintelligenz (generischer und WordPress-Adapter)
 5. Implementierung und Design
