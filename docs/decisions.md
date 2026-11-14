@@ -25,6 +25,8 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 | D-013 | Isolierte Sub-Agent-Bewertung | Offen (zurückgestellt) |
 | D-014 | Sprache der Skill-Inhalte: Englisch | Akzeptiert |
 | D-015 | Verweistiefe eins; Ladetabelle in `SKILL.md` | Vorschlag |
+| D-016 | Cursor als gleichrangige Zielumgebung; eine gemeinsame Installation | Vorschlag |
+| D-017 | Keine Argument-Platzhalter; Befehl aus dem Anfragetext ableiten | Vorschlag |
 
 ---
 
@@ -52,7 +54,7 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 
 **Vorschlag:** Ein Skill mit Befehlstabelle in `SKILL.md`. Befehlsanleitungen als `references/cmd-<name>.md`.
 **Begründung:** Die Spec kennt keine Befehle. Ein Skill hält die Aktivierungskosten klein (Metadaten nur einmal). `commands/` ist nicht standardisiert und kollidiert begrifflich mit Claude Codes eigenen Slash-Befehlen. Impeccable wählt dasselbe Muster.
-**Annahme:** Argumentübergabe in Claude Code funktioniert wie vorgesehen. **Vor dem Schreiben von `SKILL.md` prüfen.**
+**Stand nach Prüfung der Claude-Code-Doku:** Argumente werden dem Skill übergeben (`$ARGUMENTS`, sonst automatisch als `ARGUMENTS: …` angehängt). Für Cursor ungeprüft, siehe D-017.
 
 ## D-005 – Nur Spec-Felder im Frontmatter der Quelle
 
@@ -115,3 +117,15 @@ Nummern bleiben stabil. Geänderte Entscheidungen werden ergänzt, nicht übersc
 **Vorschlag:** Verweise nur von `SKILL.md` aus, eine Ebene tief; die Ladetabelle nennt je Befehl alle Dateien.
 **Begründung:** Spec: „Keep file references one level deep … Avoid deeply nested reference chains.“
 **Folge:** Der Plan (4.3: Befehlsdateien nennen ihre Referenzen selbst) wird entsprechend angepasst.
+
+## D-016 – Cursor als gleichrangige Zielumgebung; eine gemeinsame Installation
+
+**Vorschlag:** Claude Code und Cursor sind beide Zielumgebungen. Die Installation erfolgt in **einen** gemeinsamen Ordner (`.claude/skills/editorial-ux-skill/` oder `.agents/skills/…`), ohne Build.
+**Begründung:** Laut Zweitquellen liest Cursor auch `.claude/skills/` und `.agents/skills/` (`research/cursor-compatibility.md`). Das passt zu Plan 9.2.
+**Vorbehalt:** Cursor-Angaben sind **nicht an der offiziellen Doku verifiziert** (Netzwerksperre). Die Entscheidung gilt unter dem Vorbehalt eines Praxistests in Cursor. Cursor-Plugin und Marketplace erst ab Beta.
+
+## D-017 – Keine Argument-Platzhalter; Befehl aus dem Anfragetext ableiten
+
+**Vorschlag:** `SKILL.md` verwendet weder `$ARGUMENTS` noch andere Platzhalter. Der Agent leitet den Befehl aus dem Text der Anfrage ab (Befehlswort oder klar erkennbare Absicht).
+**Begründung:** Ersetzung gibt es laut Zweitquelle nur in Claude Code; dort wird ohne Platzhalter ohnehin `ARGUMENTS: …` angehängt, sodass dieselbe Datei in beiden Agenten läuft. Befehle müssen zudem natürlichsprachlich funktionieren (Aktivierung).
+**Vorbehalt:** Ob Cursor den Text hinter `/editorial-ux-skill` an den Agenten weiterreicht, ist ungeprüft.

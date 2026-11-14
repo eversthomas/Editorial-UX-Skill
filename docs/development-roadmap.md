@@ -20,7 +20,7 @@ Prinzip: **vertikaler Schnitt zuerst.** Erst wenn eine kleine Fähigkeit messbar
 ### Vor Abschluss von Phase 1 zu klären
 
 1. **Entscheidungen freigeben:** D-002, D-003, D-004, D-005, D-007, D-008, D-009, D-015.
-2. **Claude-Code-Dokumentation lesen:** Argumentübergabe für `/editorial-ux-skill <befehl>`, Zusatzfelder, Installationspfade. (Annahme in D-004.)
+2. **Claude-Code-Dokumentation lesen:** erledigt für Skills (`research/cursor-compatibility.md`); Plugin-Seiten offen. **Cursor-Doku lesen:** offen (Netzwerkfreigabe von `cursor.com` genutzt, Abruf vom Klassifikator abgelehnt; braucht Entscheidung des Projektverantwortlichen).
 3. **Repository umbenennen** (D-002): Aktion des Inhabers.
 4. **Primärquellen-Recherche** für die Methodik: NN/g-Heuristiken, WCAG 2.2, Cognitive Walkthrough, Cognitive-Load-Literatur; Nachweis je Aussage.
 
@@ -57,7 +57,7 @@ Nicht in Phase 2: `discover`, `audit`, Adapter, Pattern-Bibliothek, Skripte.
 Unverändert nach Projektplan. Änderungen aus der Recherche:
 
 - **Phase 4:** Adapter-Vorlage zusätzlich zu `custom-backends` und ProcessWire. Agentenspezifische Pakete erst planen, wenn die Quelle stabil ist.
-- **Phase 6:** Agentenvergleich nur mit Agenten, deren Skill-Installation tatsächlich geprüft wurde (bisher ungeprüft: Cursor, Codex, Gemini CLI, Antigravity).
+- **Phase 2/6:** Cursor ist Zielumgebung (D-016). Ein kurzer Praxistest in Cursor (Skill unter `.claude/skills/` gefunden? Text hinter `/editorial-ux-skill` angekommen?) gehört schon an das Ende von Phase 2, der volle Verhaltenstest in Phase 6. Agentenvergleich nur mit Agenten, deren Skill-Installation tatsächlich geprüft wurde (bisher ungeprüft: Codex, Gemini CLI, Antigravity).
 - **Phase 7:** Lizenzprüfung erneut, inklusive Abgleich aller Referenzdateien auf ihre Primärquellen (D-006).
 
 ## Risiken
