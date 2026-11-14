@@ -33,6 +33,8 @@ Grundlage: `research/impeccable-analysis.md`, `research/agent-skills-compatibili
 11. **Namensregel:** Ordnername = `name` = `editorial-ux-skill` (Spec, Cursor).
 12. **Joy of Use entfällt als Dimension** (D-023). Neun Dimensionen A–I; Prinzip 3 neu gefasst.
 13. **Methodik** in `methodology.md` entworfen: Schweregrad nach Nielsen, Evidenzstufen, Deckelungsregel, Wahrnehmungsprüfung (D-019 bis D-022).
+14. **Zwei Einsatzszenarien** (D-024): eingebettete Redaktionsoberflächen im Host-CMS, Hauptfall WordPress (Meta-Boxen, Block-Editor), und vollständige CMS-unabhängige Backends. Beides ist visuell gestaltbar.
+15. **WordPress wird erster spezifischer Adapter, ProcessWire nachrangig** (D-025; Kap. 4.2, 7, 12, 13).
 
 ## Änderungen von Version 1 zu Version 2
 
@@ -44,7 +46,7 @@ Rückmeldungen zum ersten Entwurf:
 4. Reproduzierbares Scoring durch verankerte Skalen (Kap. 6.2).
 5. Joy of Use mit beobachtbaren Kriterien (Kap. 6.1 J). *In Version 3 wieder gestrichen, siehe unten.*
 6. Regel zum Umgang mit vorhandenen Designsystemen (Kap. 3.4).
-7. Plattformadapter: zuerst generisch und ProcessWire (Kap. 7).
+7. Plattformadapter: zuerst generisch und ProcessWire (Kap. 7). *In Version 3 geändert: zuerst generisch und WordPress, ProcessWire nachrangig (D-025).*
 8. Leitplanken für Code-Änderungen (Kap. 9.4).
 9. Namen vereinheitlicht: `editorial-ux-skill`, einheitlich Plural bei Ordnern.
 10. Umgang mit Impeccable und dessen Lizenz festgelegt (Kap. 12, Phase 1).
@@ -104,6 +106,13 @@ Dazu gehören:
 - Konfigurationsoberflächen
 - Datenpflege- und Erfassungssysteme
 - Individuell entwickelte Backends
+
+### Zwei Einsatzszenarien (D-024)
+
+1. **Eingebettete Redaktionsoberflächen in einem Host-CMS.** Die Host-Oberfläche ist gesetzt; der Skill hilft, die vom Entwickler geschaffenen Bedienelemente für Redakteure zu gestalten. **Hauptfall: WordPress** mit Meta-Boxen und Block-Editor (eigene Blöcke, Seitenleisten-Panels, Optionsseiten, individuelle Felder). Der Skill schreibt das Host-Backend nicht um.
+2. **Vollständige Backends unabhängig von einem CMS:** individuell entwickelte Verwaltungsoberflächen, interne Werkzeuge, Dashboards. Hier gibt es kein vorgegebenes Designsystem.
+
+In beiden Szenarien ist **alles visuell gestaltbar**: `design` liefert Struktur und visuelle Entwürfe (Layout, Komponenten, Zustände), `implement` setzt sie in Markup, Styles und Komponenten um. Im Szenario 1 geschieht das **nur über die offiziellen Erweiterungspunkte des Host-CMS** (siehe 3.4 und 9.4).
 
 Nicht Gegenstand des Skills ist die allgemeine Entwicklung von Backend-Geschäftslogik, Datenbankarchitekturen oder APIs ohne Bezug zur Benutzeroberfläche.
 
@@ -200,6 +209,8 @@ Der Skill erzwingt keine universelle Designästhetik. Dafür gilt eine feste **R
 
 Eigene Gestaltungsvorlieben des Agenten haben keinen Vorrang vor dem Bestand.
 
+**Eingebettete Oberflächen im Host-CMS (Szenario 1):** Das Designsystem und die Komponenten des Host-CMS (bei WordPress die Standard-Bedienelemente und Stile der Admin-Oberfläche und des Block-Editors) haben **Vorrang**. Eigene Gestaltung erweitert sie **über offizielle Erweiterungspunkte**, überschreibt aber keine Kernklassen und baut keine fremd wirkenden Oberflächen im Admin-Bereich. **Vollständige Backends (Szenario 2):** Hier gilt die Rangfolge oben, einschließlich eines freigegebenen schlanken Token-Sets, wenn nichts vorhanden ist.
+
 ### 3.5 Quality Engineering
 
 Die abschließende Säule prüft die Qualität.
@@ -276,7 +287,8 @@ editorial-ux-skill/
 │       │   └── quality-assurance.md
 │       ├── platforms/
 │       │   ├── custom-backends.md   # Pflicht: generischer Adapter
-│       │   └── processwire.md       # erster spezifischer Adapter
+│       │   ├── wordpress.md         # erster spezifischer Adapter (Meta-Boxen, Block-Editor)
+│       │   └── processwire.md       # nachrangig
 │       ├── patterns/                # forms, navigation, tables, content-editors,
 │       │                            # media-management, search-and-filter,
 │       │                            # status-feedback, workflows, bulk-actions
@@ -512,7 +524,7 @@ Jeder Adapter beschreibt:
 
 Die Adapter sind optional. Unbekannte Systeme müssen ebenfalls analysierbar sein. Dafür gibt es den generischen Adapter `custom-backends.md`, der **zuerst** entsteht.
 
-**Umfang:** Das Projekt liefert zunächst nur den generischen Adapter und einen spezifischen Adapter (ProcessWire, als gut bekannte Plattform). Alle weiteren (WordPress, Drupal, Headless-CMS, Frameworks) werden Community-Beiträge nach einer Adapter-Vorlage und festgelegten Qualitätskriterien. Das begrenzt den Pflegeaufwand und verhindert veraltetes Halbwissen.
+**Umfang (D-025):** Das Projekt liefert zunächst den generischen Adapter und **einen** spezifischen Adapter: **WordPress, begrenzt auf Meta-Boxen und Block-Editor** (nicht die gesamte Admin-Oberfläche). **ProcessWire** folgt nachrangig. Alle weiteren (Drupal, Headless-CMS, Frameworks) werden Community-Beiträge nach einer Adapter-Vorlage und festgelegten Qualitätskriterien. Das begrenzt den Pflegeaufwand und verhindert veraltetes Halbwissen. Der WordPress-Adapter beschreibt, wie man dort Oberflächen für Redakteure schafft (Erweiterungspunkte, Komponentenbibliothek des Block-Editors, Berechtigungen, Barrierefreiheit), nicht, wie man Kernfunktionen ändert.
 
 Wichtig: Plattformdokumentationen müssen als veränderliche Referenzen behandelt werden. Der Agent soll bei konkreten Implementierungen die jeweils aktuelle offizielle Dokumentation prüfen, anstatt veraltete API-Annahmen zu übernehmen.
 
@@ -598,6 +610,7 @@ Da der Skill auch implementiert, gelten für `implement` und `improve` verbindli
 5. **Aktuelle Plattformdokumentation prüfen** (siehe Kap. 7), bevor plattformspezifische APIs verwendet werden.
 6. **Prüfung nach der Änderung:** Betroffene Bereiche werden erneut mit `critique` oder `audit` geprüft. Nicht prüfbare Punkte werden offen benannt.
 7. **Sichere Voreinstellung:** Keine destruktiven Operationen (Löschen, Überschreiben, Migrationen) ohne Bestätigung.
+8. **Host-CMS nur über offizielle Erweiterungspunkte:** In eingebetteten Oberflächen (Szenario 1) werden keine Kerndateien geändert, keine Kernklassen überschrieben und keine direkten Datenbankzugriffe auf Kerntabellen gemacht. Änderungen müssen Updates des Host-CMS überstehen und werden in Plugin, Theme oder Block-Paket gekapselt. Bei WordPress sind Datenbereinigung und Rechteprüfung der Eingaben und Ausgaben Teil jeder Umsetzung.
 
 ### 9.5 Sprache
 
@@ -629,15 +642,15 @@ Der Skill darf sich nicht allein durch gute Formulierungen definieren. Es muss n
 
 Ein absichtlich ungünstig gestaltetes Backend mit **dokumentierter Liste eingebauter Probleme** (Fixture, versteckte Lösungsliste). Der Agent muss die Probleme erkennen, priorisieren und konkrete Verbesserungen durchführen. Es dient als erster Maßstab, weil sich Trefferquote und Fehlalarme direkt messen lassen.
 
-**Testprojekt A: Klassisches CMS**
+**Testprojekt A: WordPress-Site mit eigenen Meta-Boxen und Blöcken**
 
-Eine typische redaktionelle Oberfläche mit:
+Eine typische spezialisierte WordPress-Redaktionsoberfläche (idealerweise aus einem echten, anonymisierten Projekt) mit:
 
-- Seitenverwaltung
-- Formularen
-- Medienverwaltung
-- Navigation
-- Veröffentlichungsstatus
+- einem Inhaltstyp mit vielen individuellen Feldern (Meta-Boxen)
+- eigenen Blöcken im Block-Editor
+- Medienauswahl
+- Veröffentlichungsstatus und Rollen
+- bedingter Anzeige und Pflichtfeldern
 
 **Testprojekt B: Individuelles PHP-Backend**
 
@@ -795,7 +808,7 @@ Ziel: Das universelle Systemverständnis realisieren.
 Aufgaben:
 
 1. Generischen Backend-Adapter entwickeln.
-2. ProcessWire-Adapter erstellen.
+2. WordPress-Adapter (Meta-Boxen, Block-Editor) erstellen; ProcessWire-Adapter nachrangig.
 3. Adapter-Vorlage und Qualitätskriterien für Community-Adapter.
 4. Technische Analyseverfahren testen.
 5. Plattformübergreifende Arbeitsweise prüfen (mindestens Testprojekte A und B).
@@ -869,7 +882,7 @@ Nicht alle Funktionen müssen von Beginn an umgesetzt werden. Die erste Version 
 
 ### Priorität 2 – Für die Beta
 
-- Generischer Adapter und ProcessWire-Adapter
+- Generischer Adapter und WordPress-Adapter (Meta-Boxen, Block-Editor); ProcessWire nachrangig
 - Befehle `design`, `implement`, `walkthrough`, `document`
 - Pattern-Bibliothek
 - Accessibility-Automatisierung

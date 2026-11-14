@@ -56,7 +56,7 @@ Nicht in Phase 2: `discover`, `audit`, Adapter, Pattern-Bibliothek, Skripte.
 
 Unverändert nach Projektplan. Änderungen aus der Recherche:
 
-- **Phase 4:** Adapter-Vorlage zusätzlich zu `custom-backends` und ProcessWire. Agentenspezifische Pakete erst planen, wenn die Quelle stabil ist.
+- **Phase 4:** Adapter-Vorlage zusätzlich zu `custom-backends` und `wordpress` (Meta-Boxen, Block-Editor); ProcessWire nachrangig (D-025). Agentenspezifische Pakete erst planen, wenn die Quelle stabil ist.
 - **Phase 2/6:** Cursor ist Zielumgebung (D-016). Ein kurzer Praxistest in Cursor (Skill unter `.claude/skills/` gefunden? Text hinter `/editorial-ux-skill` angekommen?) gehört schon an das Ende von Phase 2, der volle Verhaltenstest in Phase 6. Agentenvergleich nur mit Agenten, deren Skill-Installation tatsächlich geprüft wurde (bisher ungeprüft: Codex, Gemini CLI, Antigravity).
 - **Phase 7:** Lizenzprüfung erneut, inklusive Abgleich aller Referenzdateien auf ihre Primärquellen (D-006).
 

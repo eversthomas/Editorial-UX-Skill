@@ -116,6 +116,6 @@ Die NN/g-Artikel führen die Gruppierungsprinzipien auf Gestaltpsychologen der e
 | **Germane Load** (förderliche Last) | In NN-CL nicht enthalten. Nicht übernommen, bis Sweller-Primärliteratur geprüft ist. |
 | Feste Schwellen („≤ 4 Elemente im Arbeitsgedächtnis“, „5–7 am Limit“) | **Nicht belegt** (Cowan, Miller nicht gelesen). Werden nicht als Regel verwendet. |
 | Zuverlässigkeit von LLM-Bewertungen, Skalenanker | Keine Quelle; durch **eigene Messung** zu klären (D-011). Die Aussage von NN-SEV zu Einzelbewertungen ist ein starkes Argument für Mehrfachläufe. |
-| CMS- und Admin-spezifische UX-Muster (WordPress, Drupal, ProcessWire usw.) | **Nicht recherchiert.** Nur NN-CX als allgemeine Quelle für komplexe Anwendungen. Weitere Quellen brauchen Zugriff auf die jeweiligen Doku-Hosts. |
+| CMS- und Admin-spezifische UX-Muster (WordPress Meta-Boxen und Block-Editor, ProcessWire usw.) | **Nicht recherchiert.** Nur NN-CX als allgemeine Quelle für komplexe Anwendungen. Weitere Quellen brauchen Zugriff auf die jeweiligen Doku-Hosts. |
 | Rechtlicher Rahmen für Barrierefreiheit (EN 301 549, nationale Vorgaben) | Nicht gelesen. |
 | Prüfbarkeit der WCAG-Kriterien ohne Browser oder Hilfstechnik | Eigene Einteilung nötig (siehe `methodology.md`, 6), nicht Teil der Quellen. |
