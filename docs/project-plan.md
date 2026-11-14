@@ -2,7 +2,7 @@
 
 > Design the work, not just the interface.
 
-Projektarchitektur und Entwicklungsplan (Version 2, überarbeitet nach Plan-Review)
+Projektarchitektur und Entwicklungsplan (Version 3, angepasst nach Phase-1-Recherche; Begründungen in `decisions.md`)
 
 Projektziel: Entwicklung eines universellen, eigenständigen Open-Source-Skills zur Analyse, Konzeption, Gestaltung, Implementierung und Qualitätsverbesserung von redaktionellen und administrativen Benutzeroberflächen.
 
@@ -13,11 +13,28 @@ Projektziel: Entwicklung eines universellen, eigenständigen Open-Source-Skills 
 | Befehlspräfix | `/editorial-ux-skill <befehl>` |
 | Lizenzvorschlag | MIT |
 | Primäre Entwicklungsumgebung | Claude Code |
-| Weitere Zielumgebungen | Cursor, Codex, Gemini CLI, Antigravity und weitere Agenten mit Skill-Unterstützung |
+| Gleichrangige Zielumgebung | **Cursor** (belegt: liest `.claude/skills/` und `.agents/skills/`; D-016) |
+| Weitere Zielumgebungen | Codex, Gemini CLI, Antigravity und weitere Agenten mit Skill-Unterstützung (ungeprüft) |
 
-## Änderungen gegenüber Version 1
+## Änderungen gegenüber Version 2 (Phase-1-Recherche)
 
-Diese Version setzt die Rückmeldungen zum ersten Entwurf um:
+Grundlage: `research/impeccable-analysis.md`, `research/agent-skills-compatibility.md`, `research/cursor-compatibility.md`, `architecture.md`, `decisions.md`.
+
+1. **Layout:** Nutzlast in `skills/editorial-ux-skill/`, Projektdateien daneben (D-003, Kap. 4).
+2. **Befehle** als `references/cmd-<name>.md` statt `commands/`; Auswertung aus dem Anfragetext, keine Platzhalter (D-004, D-017, Kap. 4, 5).
+3. **Verweistiefe eins**, Ladetabelle in `SKILL.md` (D-015, Kap. 4.3).
+4. **Nur Spec-Felder** im Frontmatter (D-005, Kap. 9.1).
+5. **Cursor** gleichrangig, gemeinsamer Installationsort (D-016, Kap. 9.2).
+6. **Verteilung:** Ordner ab Alpha, Plugin und Marketplace ab Beta (D-018, Kap. 9.2).
+7. **Evals im Spec-Format** plus Aktivierungs-Eval, je Agent getrennt (D-007, Kap. 10).
+8. **Größenbudgets** im Strukturtest (D-008, Kap. 4.3, 10).
+9. **Evidenz- und Eingeschränkt-Regeln** in `SKILL.md` (D-009, Kap. 6.2).
+10. **Offene Entscheidungen** D-011 (Skalenbreite), D-012 (Profil-Persistenz), D-013 (Isolation) werden in Phase 2/3 anhand von Messungen entschieden.
+11. **Namensregel:** Ordnername = `name` = `editorial-ux-skill` (Spec, Cursor).
+
+## Änderungen von Version 1 zu Version 2
+
+Rückmeldungen zum ersten Entwurf:
 
 1. Schlanker Start statt vollständiger Struktur (Kap. 4, 12, 13).
 2. Befehle klar abgegrenzt, mit Befehlsmatrix (Kap. 5).
@@ -208,117 +225,80 @@ Die Struktur wird **stufenweise** aufgebaut. Nicht benötigte Dateien werden nic
 ### 4.1 Startstruktur (Alpha 0.1)
 
 ```
-editorial-ux-skill/
-├── SKILL.md                  # Einstieg, Prinzipien, Befehlsübersicht, Ladehinweise
-├── README.md                 # Schaufenster (kurz)
+editorial-ux-skill/                      # Repository
+├── README.md
 ├── LICENSE
-├── docs/
-│   ├── project-plan.md       # dieses Dokument
-│   ├── architecture.md
-│   ├── methodology.md
-│   ├── decisions.md
-│   ├── development-roadmap.md
-│   └── research/
-│       ├── impeccable-analysis.md
-│       └── agent-skills-compatibility.md
-├── references/
-│   ├── principles.md
-│   ├── methodology.md        # Dimensionen, Skalen, Beobachtungsarten
-│   └── anti-patterns.md
-├── commands/
-│   └── critique.md
-├── templates/
-│   └── ux-critique.md
-└── evals/
-    ├── rubric.md
-    ├── scenarios/
-    └── fixtures/
+├── skills/
+│   └── editorial-ux-skill/              # Skill-Nutzlast; Ordnername = name
+│       ├── SKILL.md                     # Prinzipien, Befehlstabelle, Ladetabelle, Gotchas
+│       ├── references/
+│       │   ├── cmd-critique.md          # Befehlsanleitung
+│       │   ├── methodology.md           # Dimensionen A–J, Skalenanker, Evidenzstufen
+│       │   ├── principles.md
+│       │   └── anti-patterns.md
+│       └── assets/
+│           └── templates/
+│               └── ux-critique.md
+├── evals/
+│   ├── evals.json                       # Prompts, Erwartungen, Assertions (Spec-Format)
+│   ├── trigger-queries.json             # ca. 20 Anfragen zur Aktivierung
+│   ├── rubric-calibration.md            # Kalibrierfälle für die Skalenanker
+│   └── fixtures/                        # Testprojekt D
+├── tests/
+│   ├── structural/
+│   └── behavior/
+└── docs/                                # Plan, Recherche, Entscheidungen, Roadmap
 ```
+
+Der Skill-Ordner enthält **nur**, was ein Agent zur Laufzeit braucht. `docs/`, `evals/` und `tests/` liegen außerhalb der Nutzlast (D-003). Die Nutzlast folgt zugleich dem Plugin-Layout `skills/<name>/SKILL.md` von Claude Code, Cursor und Agent Plugins, was die spätere Verteilung erleichtert (D-018).
 
 ### 4.2 Zielstruktur (spätestens 1.0)
 
-Die folgende Struktur ist ein **Architekturvorschlag und eine Obergrenze**, kein Pflichtumfang. Jedes Element muss sich durch Evaluationsergebnisse oder konkreten Bedarf rechtfertigen (Eintrag in `docs/decisions.md`). Ordnernamen sind durchgehend im Plural.
+Die folgende Struktur ist ein **Architekturvorschlag und eine Obergrenze**, kein Pflichtumfang. Jedes Element muss sich durch Evaluationsergebnisse oder konkreten Bedarf rechtfertigen (Eintrag in `docs/decisions.md`). Ordnernamen sind durchgehend im Plural, bis auf den Skill-Ordner selbst.
 
 ```
 editorial-ux-skill/
-├── SKILL.md
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── CHANGELOG.md
+├── README.md  LICENSE  CONTRIBUTING.md  CODE_OF_CONDUCT.md  CHANGELOG.md
 │
-├── references/
-│   ├── principles.md
-│   ├── methodology.md
-│   ├── system-intelligence.md
-│   ├── editorial-experience.md
-│   ├── interaction-design.md
-│   ├── information-architecture.md
-│   ├── cognitive-load.md
-│   ├── visual-experience.md
-│   ├── joy-of-use.md
-│   ├── accessibility.md
-│   ├── usability-evaluation.md
-│   ├── quality-assurance.md
-│   └── anti-patterns.md
+├── skills/
+│   └── editorial-ux-skill/
+│       ├── SKILL.md
+│       ├── references/
+│       │   ├── cmd-discover.md      cmd-critique.md     cmd-audit.md
+│       │   ├── cmd-improve.md       cmd-walkthrough.md  cmd-design.md
+│       │   ├── cmd-implement.md     cmd-document.md
+│       │   ├── principles.md        methodology.md      anti-patterns.md
+│       │   ├── system-intelligence.md   editorial-experience.md
+│       │   ├── interaction-design.md    information-architecture.md
+│       │   ├── cognitive-load.md        visual-experience.md
+│       │   ├── joy-of-use.md            accessibility.md
+│       │   └── quality-assurance.md
+│       ├── platforms/
+│       │   ├── custom-backends.md   # Pflicht: generischer Adapter
+│       │   └── processwire.md       # erster spezifischer Adapter
+│       ├── patterns/                # forms, navigation, tables, content-editors,
+│       │                            # media-management, search-and-filter,
+│       │                            # status-feedback, workflows, bulk-actions
+│       └── assets/templates/        # system-profile, editorial-profile, ux-critique,
+│                                    # ux-audit, design-brief, walkthrough-report
 │
-├── platforms/
-│   ├── general/
-│   │   └── custom-backends.md        # Pflicht: generischer Adapter
-│   ├── cms/
-│   │   └── processwire.md            # erster spezifischer Adapter
-│   └── community/                    # WordPress, Drupal, Headless, Laravel, Django ...
-│
-├── commands/
-│   ├── discover.md
-│   ├── critique.md
-│   ├── audit.md
-│   ├── improve.md
-│   ├── walkthrough.md
-│   ├── design.md
-│   ├── implement.md
-│   └── document.md
-│
-├── patterns/
-│   ├── forms.md
-│   ├── navigation.md
-│   ├── tables.md
-│   ├── content-editors.md
-│   ├── media-management.md
-│   ├── search-and-filter.md
-│   ├── status-feedback.md
-│   ├── workflows.md
-│   └── bulk-actions.md
-│
-├── evals/
-│   ├── rubric.md
-│   ├── scenarios/
-│   └── fixtures/
-│
-├── templates/
-│   ├── system-profile.md
-│   ├── editorial-profile.md
-│   ├── ux-critique.md
-│   ├── ux-audit.md
-│   ├── design-brief.md
-│   └── walkthrough-report.md
-│
-└── tests/
-    ├── structural/
-    └── behavior/
+├── evals/                           # evals.json, trigger-queries.json, rubric-calibration.md, fixtures/
+├── tests/                           # structural/, behavior/
+├── docs/
+└── community/                       # Adapter-Beiträge (WordPress, Drupal, Headless, Laravel, ...)
 ```
 
-Änderungen gegenüber Version 1: `reference/` wird `references/`; Testfixtures und Bewertungsszenarien liegen nur noch unter `evals/`; der Befehl `test` heißt `walkthrough`; Adapter außer `custom-backends` und `processwire` wandern in `platforms/community/`.
+Änderungen gegenüber Version 1 und 2: Nutzlast unter `skills/editorial-ux-skill/`; `commands/` wird `references/cmd-*.md`; `templates/` wird `assets/templates/`; `reference/` wird `references/`; Fixtures nur unter `evals/`; weitere Adapter in `community/` außerhalb der Nutzlast, bis sie geprüft sind. Die Säulen aus Kap. 3 bleiben **fachliche Gliederung**. Eigene Referenzdatei je Säule entsteht erst, wenn eine Datei ihr Budget sprengt (`architecture.md`, 8).
 
 ### 4.3 Kontextmanagement
 
-Zentrale Referenzen werden bei Bedarf geladen. Der Agent soll nicht bei jeder kleinen Aufgabe sämtliche Dokumente einlesen. Konkret:
+Zentrale Referenzen werden bei Bedarf geladen. Der Agent soll nicht bei jeder kleinen Aufgabe sämtliche Dokumente einlesen. Konkret (Agent Skills Spec, D-008, D-015):
 
-- `SKILL.md` bleibt kurz und enthält nur Prinzipien, Befehlsübersicht und eine Ladetabelle („Für Befehl X lade Dateien Y und Z“).
-- Jede Befehlsdatei nennt ihre benötigten Referenzen explizit.
-- Jede Referenzdatei ist eigenständig lesbar (kein Zwang, andere Dateien mitzuladen).
-- Das Kontextbudget wird in der Evaluation gemessen (Kap. 10), nicht nur geschätzt.
+- **`SKILL.md` unter 500 Zeilen und unter 5 000 Token.** Die wichtigsten Regeln (Evidenzstufen, Eingeschränkt-Hinweis, Freigabe vor Codeänderungen) stehen **am Anfang**, weil Claude Code nach einer Kontext-Kompaktierung nur die ersten 5 000 Token je Skill behält.
+- **Ladetabelle in `SKILL.md`:** je Befehl eine Zeile mit **allen** benötigten Dateien. Befehlsanleitungen verweisen nicht weiter (Verweistiefe eins).
+- Jede Referenzdatei ist eigenständig lesbar.
+- **Größenbudgets** je Datei und je Befehl (geladene Gesamtmenge) in einer Budgetdatei, vom Strukturtest erzwungen. Zahlen werden in Phase 2 an den ersten echten Dateien festgelegt, nicht vorab geraten.
+- Das Kontextbudget wird in der Evaluation gemessen (`timing.json`, Kap. 10), nicht nur geschätzt.
 
 ### 4.4 Modularisierung kritisch prüfen
 
@@ -329,6 +309,8 @@ Ob die Aufteilung wirklich sinnvoll ist, wird in Phase 1 geprüft und als Entsch
 ## 5. Befehle und Arbeitsmethodik
 
 Der Skill erhält eine einheitliche Befehlsschnittstelle. Die konkrete Umsetzung muss mit dem jeweiligen Agenten kompatibel sein.
+
+**Umsetzung (D-004, D-017):** Es gibt **einen** Skill. Die Befehle sind keine eigenen Skills, sondern Argumente: `SKILL.md` enthält die Befehlstabelle und die Ladetabelle, die Anleitung je Befehl liegt in `references/cmd-<name>.md`. `SKILL.md` verwendet **keine Platzhalter** wie `$ARGUMENTS` (nur Claude Code kennt sie). Der Agent leitet den Befehl aus dem Text der Anfrage ab (Befehlswort oder klar erkennbare Absicht). Ohne eindeutigen Befehl fragt er einmal nach. Ein Aufruf ohne Argument zeigt ein kurzes Menü und führt **nichts** automatisch aus. Ob Cursor den Text hinter `/editorial-ux-skill` in die Nachricht übernimmt, ist ungeprüft; die natürlichsprachliche Anfrage funktioniert in jedem Fall.
 
 ### 5.1 Befehle
 
@@ -584,7 +566,7 @@ Die Pattern-Bibliothek soll im Laufe des Projekts durch reale Anwendungserfahrun
 
 - Keine Abhängigkeit von Impeccable.
 - Keine Abhängigkeit von einem bestimmten KI-Anbieter.
-- Möglichst hohe Kompatibilität mit dem Agent Skills Standard.
+- Kompatibilität mit dem Agent Skills Standard: Frontmatter der Quelle enthält **nur Spec-Felder** (`name`, `description`, `license`, `metadata`; D-005). Claude Code ignoriert Unbekanntes, der claude.ai-Upload bricht bei Zusatzfeldern ab, Cursor kennt nur eine Teilmenge. `name` ist immer gesetzt und **gleich dem Ordnernamen** (`editorial-ux-skill`; Spec und Cursor verlangen das). Offen: Cursors Umgang mit `license`/`compatibility`.
 - Markdown-basierte Kernarchitektur.
 - Keine obligatorischen Cloud-Dienste.
 - Keine API-Schlüssel erforderlich.
@@ -597,7 +579,14 @@ Die Pattern-Bibliothek soll im Laufe des Projekts durch reale Anwendungserfahrun
 
 Die zentrale Skill-Quelle bleibt agentenunabhängig. Bei Bedarf können daraus agentenspezifische Installationspakete erzeugt werden.
 
-Die erste Version soll sich ohne Buildprozess direkt in Claude Code einsetzen lassen. Weitere Installationsformate folgen.
+Die erste Version soll sich ohne Buildprozess direkt in **Claude Code und Cursor** einsetzen lassen (D-016):
+
+- **Gemeinsamer Installationsort** `.claude/skills/editorial-ux-skill/` (alternativ `.agents/skills/`). Cursor liest laut offizieller Doku auch `.claude/skills/`. **Keine Zweitkopie** unter `.cursor/skills/`.
+- **Alpha:** Ordner kopieren oder verlinken.
+- **Beta:** Plugin- und Marketplace-Dateien (`.claude-plugin/marketplace.json`, `.cursor-plugin/marketplace.json`), getrennt von der Nutzlast (D-018). Das Layout `skills/<name>/SKILL.md` ist bereits plugin-kompatibel.
+- **Nach 1.0, optional:** Aufnahme in den öffentlichen Cursor-Marketplace (manueller Review, Open Source Pflicht) und das Anthropic-Verzeichnis.
+- Kein `npx`-Installer (widerspricht „keine Build-Abhängigkeiten“).
+- Weitere Agenten (Codex, Gemini CLI, Antigravity): erst nach geprüfter Installation (Phase 6).
 
 ### 9.3 Keine unnötigen Automatisierungen
 
@@ -636,6 +625,12 @@ Der Skill darf sich nicht allein durch gute Formulierungen definieren. Es muss n
 **Evaluation läuft von Beginn an mit.** Schon in Phase 2 entsteht mindestens ein Testprojekt mit Aufgaben und Erwartungen. Jede neue Fähigkeit wird gegen die Evaluation geprüft, bevor sie als fertig gilt.
 
 **Vergleichsbasis:** Es wird immer verglichen: derselbe Agent, dieselbe Aufgabe, **mit** und **ohne** Skill. Nur so ist ein Mehrwert belegbar.
+
+**Format (D-007):** Evals folgen dem Spec-Muster. `evals/evals.json` enthält je Fall `prompt`, `expected_output`, `files` und `assertions`. Jeder Lauf entsteht in sauberem Kontext in einem Arbeitsverzeichnis `…-workspace/iteration-N/<fall>/{with_skill,without_skill}/` mit `outputs/`, `timing.json` (Tokens, Dauer), `grading.json` (Assertion mit Beleg) und aggregiert `benchmark.json`. Assertions müssen prüfbar sein; Qualitäten wie Gestaltung werden zusätzlich menschlich durchgesehen.
+
+**Aktivierungs-Eval:** `evals/trigger-queries.json` mit ca. 20 Anfragen (8–10 sollen auslösen, 8–10 nicht, Negativfälle als **Beinahe-Treffer**, z. B. Landingpage-Design, API-Design, Datenbankschema). Geprüft wird, ob die `description` richtig auslöst. Ziel: keine Falsch-Positive bei den Beinahe-Treffern.
+
+**Je Agent getrennt:** Ergebnisse werden für Claude Code und Cursor getrennt ausgewiesen, damit Unterschiede sichtbar werden. Der Praxistest in Cursor (Skill unter `.claude/skills/` gefunden, Text hinter `/editorial-ux-skill` angekommen, Verhalten bei `license`/`compatibility`) gehört an das Ende von Phase 2.
 
 ### Testprojekte
 
@@ -694,7 +689,7 @@ Zusätzlich werden statische Prüfungen und, soweit verfügbar, Browser- und Int
 
 Es sollen sowohl die Ergebnisse als auch die tatsächlichen Arbeitsschritte des Agenten bewertet werden.
 
-**Strukturtests** (`tests/structural/`) prüfen formale Eigenschaften des Skills, z. B. gültiges Frontmatter, vorhandene Dateien, aufgelöste Verweise, Größenlimits für `SKILL.md`. **Verhaltenstests** (`tests/behavior/`) prüfen das Verhalten von Agenten anhand der Szenarien aus `evals/`.
+**Strukturtests** (`tests/structural/`) prüfen formale Eigenschaften des Skills: `skills-ref validate` (Entwicklungswerkzeug, keine Laufzeitabhängigkeit), Ordnername = `name`, nur zulässige Zeichen, `description` vorhanden und höchstens 1 024 Zeichen, keine Platzhalter im Body, aufgelöste Verweise, **Verweistiefe eins**, Größenbudgets (`SKILL.md` unter 500 Zeilen und 5 000 Token). **Verhaltenstests** (`tests/behavior/`) prüfen das Verhalten von Agenten anhand der Szenarien aus `evals/`.
 
 ---
 
@@ -710,7 +705,7 @@ Vor Veröffentlichung müssen sämtliche übernommenen Inhalte und Drittanbieter
 
 ### Repository
 
-Öffentliches GitHub-Repository: `editorial-ux-skill`. Der Skill-Name entspricht dem Repository-Namen.
+Öffentliches GitHub-Repository: `editorial-ux-skill` (Kleinschreibung; die Umbenennung von `Editorial-UX-Skill` steht aus und ist für die Funktion nicht blockierend, D-002). Der Skill-Name entspricht dem Repository-Namen und dem Ordnernamen der Nutzlast.
 
 ### Dokumentation
 
@@ -751,6 +746,8 @@ Die Phasen sind so geschnitten, dass früh ein **vertikaler Schnitt** entsteht: 
 
 Ziel: Eine belastbare fachliche Grundlage schaffen.
 
+**Stand:** Aufgaben 1, 2, 3 (Architektur) und 8 sind erledigt, Aufgabe 9 ist nur im Entwurf (offene Skalenbreite D-011). Aufgaben 4 bis 7 und `docs/methodology.md` sind offen und hängen am Zugriff auf Primärquellen (Nielsen Norman Group, W3C/WCAG).
+
 Aufgaben:
 
 1. Impeccable untersuchen (Architektur, Befehle, Referenzen, Tests). **Zuerst die Lizenz klären** und festhalten, was Orientierung bedeutet: Struktur und Ansätze analysieren ja, Texte oder Beispiele übernehmen nein.
@@ -773,12 +770,15 @@ Ziel: Eine funktionsfähige erste Skill-Version, die **eine** Sache messbar gut 
 
 Aufgaben:
 
-1. `SKILL.md` mit Prinzipien und Ladehinweisen.
-2. `references/principles.md`, `references/methodology.md`, `references/anti-patterns.md`.
-3. `evals/rubric.md` mit verankerten Skalen.
-4. Befehl `critique` samt Template.
-5. Testprojekt D mit Fixture und Lösungsliste.
-6. Erste Vergleichsmessung mit und ohne Skill.
+1. Layout anlegen (`skills/editorial-ux-skill/`, `evals/`, `tests/`) und **Strukturtest** (`skills-ref validate`, Namensregel, Verweise, Verweistiefe, Budgets).
+2. `references/methodology.md` mit Dimensionen A–J, verankerten Skalen, Evidenzstufen und Schweregraden; `references/principles.md`, `references/anti-patterns.md`. Jede Referenz nennt ihre **Primärquellen** (D-006).
+3. Testprojekt D mit Fixture und **versteckter Lösungsliste**; **Baseline ohne Skill** (mehrere Läufe).
+4. `SKILL.md` (Prinzipien und Kernregeln zuerst, Befehlstabelle, Ladetabelle, Gotchas).
+5. Befehl `critique` (`references/cmd-critique.md`) samt Vorlage `ux-critique.md`.
+6. **Aktivierungs-Eval** (`evals/trigger-queries.json`).
+7. Lauf mit Skill gegen die Baseline (Trefferquote, Falschbefunde, Streuung, Kontext und Zeit).
+8. **Kalibrierlauf Skalenbreite** 0–5 gegen 0–4 (D-011).
+9. **Praxistest in Cursor** (siehe Kap. 10).
 
 Ergebnis: Editorial UX Skill Alpha 0.1. **Entscheidungspunkt:** Bringt der Skill messbar bessere Kritik? Wenn nein, wird die Methodik überarbeitet, bevor weiter gebaut wird.
 
@@ -914,7 +914,8 @@ Editorial UX Skill 1.0 gilt als fertig, wenn:
   - Bei wiederholten Durchläufen auf denselben Fixtures weichen die Dimensionsscores im Regelfall um höchstens einen Punkt voneinander ab.
   - Die Priorisierung der drei wichtigsten Befunde stimmt über Durchläufe weitgehend überein.
 - Mindestens drei unterschiedliche technische Umgebungen erfolgreich getestet wurden.
-- Die Kernfunktionen mit mindestens drei verschiedenen KI-Coding-Agenten getestet wurden.
+- Die Kernfunktionen mit mindestens drei verschiedenen KI-Coding-Agenten getestet wurden, **darunter Claude Code und Cursor** mit getrennt ausgewiesenen Ergebnissen.
+- Strukturtest grün: Spec-Validierung, Ordnername gleich `name`, Verweistiefe eins, Budgets eingehalten; Aktivierungs-Eval ohne Falsch-Positive bei den Beinahe-Treffern.
 - Dokumentation und Installation für externe Benutzer verständlich sind (geprüft durch mindestens eine Person, die das Projekt nicht kennt).
 - Lizenz und Drittanbieterbestandteile geprüft wurden.
 

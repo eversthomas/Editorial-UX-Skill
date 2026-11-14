@@ -9,7 +9,8 @@ Recherche zu Phase 1 (Projektplan Kap. 12 und 15). Ziel: Impeccable als **Refere
 | Repository | https://github.com/pbakaus/impeccable |
 | Geprüfter Stand | Commit `61e73eeb` (shallow clone, 2026-11-13) |
 | Methode | Direkte Lektüre des Quellcodes: `LICENSE`, `NOTICE.md`, `README.md`, `skill/SKILL.src.md`, ausgewählte `skill/reference/*.md`, `scripts/token-budget.json`, `docs/DEVELOP.md`, `tests/` (Struktur und Kopf von `activation.eval.mjs`) |
-| Nicht gelesen | Rust-Engine (`crates/`), Browser-Extension, VS-Code-Extension, Live-Modus im Detail, die meisten der 45 Referenzdateien im Volltext, `new-work*.md`, `operate.md` |
+| Zusätzlich gelesen (Nachtrag) | `skill/reference/operate.md`, `shape.md`, `harden.md` (Anfang), `critique-rubric.md` (Cognitive Load, Heuristik-Skalen, Personas) und die Bänder in `critique.md` |
+| Nicht gelesen | Rust-Engine (`crates/`), Browser-Extension, VS-Code-Extension, Live-Modus im Detail, übrige Referenzdateien im Volltext (u. a. `new-work*.md`, `document.md`, `onboard.md`, `clarify.md`) |
 
 Aussagen unten sind **beobachtet** (im Quelltext gesehen), sofern nicht als *Hypothese* gekennzeichnet.
 
@@ -50,7 +51,11 @@ Dies ist keine Rechtsberatung. Vor dem Release (Phase 7) wird die Lizenzprüfung
 ### 3.4 Modi
 
 - **Beobachtet:** Impeccable unterscheidet vier Modi: **Persuade, Operate, Read, Experience**. Admin-UIs, Editoren und Dashboards fallen unter **Operate**: „Scanability, consistency, native expectations … outrank expression.“
-- *Hypothese:* Das heißt, Impeccable behandelt Admin-UIs als einen von vier Modi mit visuellem Schwerpunkt. Arbeitsabläufe, Rollen und redaktionelle Aufgaben sind nicht der Kern. Ich habe `operate.md` nicht vollständig gelesen, daher ist das vor einer Abgrenzung im Detail zu prüfen.
+- **Beobachtet (`operate.md`, 5 KB):** Die Operate-Anleitung ist **kurz und fast rein visuell**: Typografie (eine Schriftfamilie, feste rem-Skala), Farbe (zurückhaltend, Statusvokabular), Layout (strukturelle Responsivität), Komponenten (alle Zustände, Skeleton-Loading, Empty States, konsistente Affordanzen), Bewegung (150–250 ms), Verbote (z. B. „Modal as first thought“) und „Product permissions“ (Dichte, Standardnavigation). Das Leitbild ist: „The tool should disappear into the task.“
+- **Beobachtet:** `operate.md` enthält **nichts** zu Rollen, Freigabeprozessen, Veröffentlichungsstatus, Mehrfachbearbeitung, Datenpflege-Arbeitsabläufen, Berechtigungskonzepten oder zu Besonderheiten bestimmter CMS.
+- **Beobachtet (`shape.md`, 3,5 KB):** `shape` ist ein **Discovery-Interview** (zwei Runden, Fragen zu Zweck, Personen, Zuständen, Grenzen), das mit einem bestätigten **Design-Brief ohne Code** endet. Ohne menschliche Antwortmöglichkeit werden Annahmen „plainly“ markiert. Das entspricht in Teilen unserem `design` (Konzeptstufe) und der Regel „Annahmen kennzeichnen“.
+- **Beobachtet (`harden.md`):** Härtung gegen Randfälle (lange Texte, Fehler, Internationalisierung) mit viel CSS-Beispielcode; Schwerpunkt Produktionsreife von Oberflächen, nicht Arbeitsabläufe.
+- **Schluss:** Die Hypothese ist damit **bestätigt**: Impeccable behandelt Admin-UIs als Modus mit visuellem und Komponenten-Schwerpunkt. Aufgabenfluss, Rollen und redaktionelle Arbeit sind **nicht Gegenstand** der gelesenen Dateien.
 
 ### 3.5 Verteilung
 
@@ -63,7 +68,10 @@ Dies ist keine Rechtsberatung. Vor dem Release (Phase 7) wird die Lizenzprüfung
 
 - **Beobachtet:** Zwei **voneinander isolierte** Assessments als getrennte Sub-Agents: A (Design-Review) und B (Detektor und Browser-Evidenz). A muss fertig sein, bevor B-Ergebnisse in den Hauptkontext gelangen, damit B das Urteil nicht „verankert“.
 - **Beobachtet:** Läuft das im Einzelkontext (kein Sub-Agent-Werkzeug), muss die **erste Zeile** des Berichts lauten: `⚠️ DEGRADED: single-context (<Grund>)`. Ein stilles Degradieren gilt als fehlgeschlagener Lauf.
-- **Beobachtet:** Bewertung nach Nielsens 10 Heuristiken, je 0–4, Summe max. 40, Bänder (z. B. 36–40 „Excellent“), Probleme mit Schweregrad **P0–P3**. Heuristiken dürfen als `n/a` markiert werden. Die Rubrik enthält außerdem eine Cognitive-Load-Checkliste mit 8 Punkten und Personas.
+- **Beobachtet:** Bewertung nach Nielsens 10 Heuristiken, je 0–4, Summe max. 40, Bänder (36–40 „Excellent“, 28–35 „Good“, 20–27 „Acceptable“, 12–19 „Poor“, 0–11 „Critical“), Probleme mit Schweregrad **P0–P3**. Heuristiken dürfen als `n/a` markiert werden; dann zählt der Prozentwert (90 %+ Excellent usw.).
+- **Beobachtet (`critique-rubric.md`, 20 KB):** (1) Cognitive-Load-Teil mit drei Lastarten (intrinsisch, extraneous, germane), einer 8-Punkte-Checkliste (Ergebnis nach Anzahl der Fehlpunkte) und der „Working Memory Rule“ (≤ 4 Elemente, mit Verweis auf Cowan 2001), (2) je Heuristik **Prüfpunkte und eine eigene 0–4-Skala mit Ankern** (z. B. 0 „No feedback; user is guessing what happened“, 4 „every action confirms, progress is always visible“), (3) fünf **Personas** (z. B. „Impatient Power User“, „Confused First-Timer“, „Accessibility-Dependent User“, „Deliberate Stress Tester“, „Distracted Mobile User“) mit der Möglichkeit projektspezifischer Personas.
+- **Beobachtet (Unterschied zu uns):** Impeccable bildet eine **Gesamtsumme mit Bandbezeichnung**. Eine einzelne schwere Schwäche (z. B. Accessibility) kann darin untergehen; Schweregrade P0–P3 mildern das nur auf Befundebene. Unser Plan (6.2) verlangt ausdrücklich, dass ein Gesamtwert eine schwere Schwäche nicht verdeckt (Blocker-Regel). Das ist ein **bewusster methodischer Unterschied**.
+- **Hinweis zur Quellenlage:** Die Rubrik stellt feste Schwellen (z. B. „≤ 4 Items“, „German is often 30 % longer“) als Tatsachen dar. Für unsere Methodik gilt: Solche Zahlen nur übernehmen, wenn sie aus Primärquellen belegt sind (D-006), und als Richtwerte kennzeichnen.
 - **Beobachtet:** Das Ergebnis wird als Snapshot persistiert, der Chat-Bericht ist das Hauptergebnis. Die abschließende Rückfrage steht immer **zuletzt**.
 
 ### audit
@@ -111,10 +119,10 @@ Dies ist keine Rechtsberatung. Vor dem Release (Phase 7) wird die Lizenzprüfung
 
 ### Abgrenzung (Hypothese, noch zu schärfen)
 
-Impeccable ist ein **Interface-Gestaltungs- und Review-Skill** mit starkem visuellen Fokus, der Admin-UIs als Modus „Operate“ mitbehandelt. Editorial UX Skill setzt **Aufgaben, Rollen, Arbeitsabläufe und Fehlertoleranz im redaktionellen Alltag** an die erste Stelle und behandelt Visuelles als eine von zehn Dimensionen. Zu belegen ist das erst, sobald `operate.md` und die Befehle `shape` und `onboard` im Volltext gelesen sind.
+Impeccable ist ein **Interface-Gestaltungs- und Review-Skill** mit starkem visuellen Fokus, der Admin-UIs als Modus „Operate“ mitbehandelt. Editorial UX Skill setzt **Aufgaben, Rollen, Arbeitsabläufe und Fehlertoleranz im redaktionellen Alltag** an die erste Stelle und behandelt Visuelles als eine von zehn Dimensionen. Belegt durch `operate.md`, `shape.md`, `harden.md` und `critique-rubric.md` (Abschnitt 3.4). Ungelesen: `onboard.md`, `clarify.md`, `document.md`; sie ändern die Abgrenzung voraussichtlich nicht.
 
 ## 7. Offene Punkte
 
-1. `operate.md`, `shape.md`, `harden.md`, `critique-rubric.md` vollständig lesen, bevor die Abgrenzung in der README behauptet wird.
-2. Prüfen, ob Impeccable irgendwo Wirkungsvergleiche (mit/ohne Skill) veröffentlicht.
-3. Die Nielsen-Heuristiken und Cognitive-Load-Methoden aus **Primärquellen** einordnen (Plan Phase 1, Aufgabe 5), nicht über Impeccable.
+1. ~~`operate.md`, `shape.md`, `harden.md`, `critique-rubric.md` lesen~~ (erledigt, siehe 3.4 und 4).
+2. Prüfen, ob Impeccable irgendwo Wirkungsvergleiche (mit/ohne Skill) veröffentlicht. **Offen.**
+3. Die Nielsen-Heuristiken und Cognitive-Load-Methoden aus **Primärquellen** einordnen (Plan Phase 1, Aufgabe 5), nicht über Impeccable. **Offen**, Quellen (nngroup.com, w3.org) sind in dieser Sitzung noch nicht zugänglich.
